@@ -1,11 +1,11 @@
 import { combineReducers } from "redux";
 import users from "./users";
 import questions from "./questions";
-import receiveAuthUser from "./authedUser";
+import authUser from "./authedUser";
 
-console.log("55555", receiveAuthUser);
+console.log("55555", authUser);
 export default combineReducers({
 	users,
 	questions,
-	receiveAuthUser,
+	authUser,
 });

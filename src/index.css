@@ -60,11 +60,16 @@ a {
 
   display: inline-block;
   background-color: #149DCC;
-  width: 160%;
+  width: 110%;
   height: 30px;
   text-align: center;
-  padding-top: 10px;
-  border-radius: 30px;
+  padding-top: 12px;
+  padding-left: 5px;
+  padding-right: 5px;
+
+  border-radius: 60px;
+  font-size: 15px;
+  font-weight: 700;
 }
 
 .signin:hover {
