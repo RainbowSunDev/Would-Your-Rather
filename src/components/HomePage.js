@@ -2,6 +2,7 @@ import React, { Component } from "react";
 
 import ReactModalLogin from "react-modal-login";
 import { facebookConfig, googleConfig } from "../API/social-config";
+import { base } from "../base";
 
 class HomePage extends Component {
 	constructor(props) {
