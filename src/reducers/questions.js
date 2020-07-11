@@ -1,9 +1,18 @@
-import { GET_QUESTIONS } from "../actions/questions";
+import {
+	GET_QUESTIONS,
+	ADD_QUESTION,
+	CREATE_QUESTION_ERROR,
+} from "../actions/questions";
 
 export default function questions(state = {}, action) {
 	switch (action.type) {
-		case GET_QUESTIONS:
-			return { ...state, ...action.questions };
+		case ADD_QUESTION:
+			console.log("created question", action.question);
+			return { ...state, ...action.question };
+		case CREATE_QUESTION_ERROR:
+			console.log("ERROR created new question", action.err);
+			return state;
+
 		default:
 			return state;
 	}
