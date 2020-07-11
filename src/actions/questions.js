@@ -16,7 +16,9 @@ export default function addNewQuestion(question) {
 
 		firestore
 			.collection("questions")
-			.add({
+			.doc(formattedQuestion.id)
+
+			.set({
 				...question,
 				...formattedQuestion,
 			})

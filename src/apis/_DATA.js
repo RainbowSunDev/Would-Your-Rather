@@ -33,7 +33,14 @@ let users = {
 		questions: ["6ni6ok3ym7mf1p33lnez", "xj352vofupe1dqz9emx13r"],
 	},
 };
-
+const defaultAvatars = [
+	"../assets/maleAvatars/avatar1.jpg",
+	"../assets/maleAvatars/avatar2.jpg",
+	"../assets/maleAvatars/avatar3.jpg",
+	"../assets/maleAvatars/avatar4.jpg",
+	"../assets/maleAvatars/avatar5.jpg",
+	"../assets/maleAvatars/avatar6.jpg",
+];
 let questions = {
 	"8xf0y6ziyjabvozdd253nd": {
 		id: "8xf0y6ziyjabvozdd253nd",
@@ -147,6 +154,19 @@ export function formatQuestion({ optionOneText, optionTwoText, author }) {
 			votes: [],
 			text: optionTwoText,
 		},
+	};
+}
+export function formatUser({ username, name, email, password }) {
+	return {
+		id: username,
+		timestamp: Date.now(),
+		email: email,
+		password: password,
+		name: name,
+		avatarURL:
+			defaultAvatars[Math.floor(Math.random() * defaultAvatars.length)],
+		answers: {},
+		questions: [],
 	};
 }
 

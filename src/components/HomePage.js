@@ -4,6 +4,7 @@ import ReactModalLogin from "react-modal-login";
 import { facebookConfig, googleConfig } from "../API/social-config";
 
 import addNewQuestion from "../actions/questions";
+import addNewUser from "../actions/users";
 
 class HomePage extends Component {
 	constructor(props) {
@@ -34,12 +35,6 @@ class HomePage extends Component {
 		} else {
 			this.onLoginSuccess("form");
 		}
-		console.log("55555555", this.props);
-		this.props.createQuestion({
-			author: "johndoe",
-			optionOne: "hell yeah",
-			optionTwo: "hell not yeah",
-		});
 	}
 
 	onRegister() {
@@ -51,6 +46,7 @@ class HomePage extends Component {
 		const login = document.querySelector("#login").value;
 		const email = document.querySelector("#email").value;
 		const password = document.querySelector("#password").value;
+		const fullName = document.querySelector("#full-name").value;
 
 		if (!login || !email || !password) {
 			this.setState({
@@ -59,6 +55,12 @@ class HomePage extends Component {
 		} else {
 			this.onLoginSuccess("form");
 		}
+		this.props.createUser({
+			email: email,
+			password: password,
+			name: fullName,
+			username: login,
+		});
 	}
 
 	onRecoverPassword() {
@@ -217,12 +219,11 @@ class HomePage extends Component {
 						loginInputs: [
 							{
 								containerClass: "RML-form-group",
-								label: "Email",
+								label: "Email/Username",
 								type: "email",
 								inputClass: "RML-form-control",
 								id: "email",
 								name: "email",
-								placeholder: "Email",
 							},
 							{
 								containerClass: "RML-form-group",
@@ -231,18 +232,26 @@ class HomePage extends Component {
 								inputClass: "RML-form-control",
 								id: "password",
 								name: "password",
-								placeholder: "Password",
 							},
 						],
 						registerInputs: [
 							{
 								containerClass: "RML-form-group",
-								label: "Nickname",
+								label: "Username",
 								type: "text",
 								inputClass: "RML-form-control",
 								id: "login",
 								name: "login",
-								placeholder: "Nickname",
+								placeholder: "@yourfavtrutle",
+							},
+							{
+								containerClass: "RML-form-group",
+								label: "Full Name",
+								type: "text",
+								inputClass: "RML-form-control",
+								id: "full-name",
+								name: "Name",
+								placeholder: "i.e. Michael Angello",
 							},
 							{
 								containerClass: "RML-form-group",
@@ -251,7 +260,7 @@ class HomePage extends Component {
 								inputClass: "RML-form-control",
 								id: "email",
 								name: "email",
-								placeholder: "Email",
+								placeholder: "i.e. michaelangello@gmail.com",
 							},
 							{
 								containerClass: "RML-form-group",
@@ -260,7 +269,7 @@ class HomePage extends Component {
 								inputClass: "RML-form-control",
 								id: "password",
 								name: "password",
-								placeholder: "Password",
+								placeholder: "must be at least 8 characters",
 							},
 						],
 						recoverPasswordInputs: [
@@ -300,6 +309,9 @@ class HomePage extends Component {
 	}
 }
 const mapStateToProps = (dispatch) => {
-	return { createQuestion: (question) => dispatch(addNewQuestion(question)) };
+	return {
+		createQuestion: (question) => dispatch(addNewQuestion(question)),
+		createUser: (user) => dispatch(addNewUser(user)),
+	};
 };
 export default connect(null, mapStateToProps)(HomePage);
