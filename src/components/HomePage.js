@@ -1,7 +1,9 @@
 import React, { Component } from "react";
-
+import { connect } from "react-redux";
 import ReactModalLogin from "react-modal-login";
 import { facebookConfig, googleConfig } from "../API/social-config";
+
+import addNewQuestion from "../actions/questions";
 
 class HomePage extends Component {
 	constructor(props) {
@@ -32,6 +34,12 @@ class HomePage extends Component {
 		} else {
 			this.onLoginSuccess("form");
 		}
+		console.log("55555555", this.props);
+		this.props.createQuestion({
+			author: "johndoe",
+			optionOne: "hell yeah",
+			optionTwo: "hell not yeah",
+		});
 	}
 
 	onRegister() {
@@ -291,4 +299,7 @@ class HomePage extends Component {
 		);
 	}
 }
-export default HomePage;
+const mapStateToProps = (dispatch) => {
+	return { createQuestion: (question) => dispatch(addNewQuestion(question)) };
+};
+export default connect(null, mapStateToProps)(HomePage);

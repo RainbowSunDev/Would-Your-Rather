@@ -8,9 +8,9 @@ export function handleInitialData() {
 	return (dispatch) => {
 		return _getUsers().then((users) => {
 			_getQuestions().then((questions) => {
-				dispatch(receiveUsers(users));
-				dispatch(receiveQuestions(questions));
-				dispatch(receiveAuthUser(AUTHED_ID));
+				//dispatch(receiveUsers(users));
+				//dispatch(receiveQuestions(questions));
+				//dispatch(receiveAuthUser(AUTHED_ID));
 			});
 		});
 	};

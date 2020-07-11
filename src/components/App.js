@@ -4,7 +4,9 @@ import { handleInitialData } from "../actions/shared";
 import { connect } from "react-redux";
 
 import NavBar from "./Nav";
+
 import HomePage from "./HomePage";
+
 class App extends Component {
 	componentDidMount() {
 		console.log(this.props);

@@ -1,9 +1,16 @@
+import { formatQuestion } from "../apis/_DATA";
+
 export const GET_QUESTIONS = "GET_QUESTIONS";
 export const ADD_QUESTION = "ADD_QUESTION";
 export const CREATE_QUESTION_ERROR = "CREATE_QUESTION_ERROR";
 
-export default function receiveQuestions(question) {
+export default function addNewQuestion(question) {
 	//TODO Make async calls to the database
+	const formattedQuestion = formatQuestion({
+		author: question.author,
+		optionOneText: question.optionOne,
+		optionTwoText: question.optionTwo,
+	});
 	return (dispatch, getState, { getFirebase, getFirestore }) => {
 		const firestore = getFirestore();
 
@@ -11,14 +18,7 @@ export default function receiveQuestions(question) {
 			.collection("questions")
 			.add({
 				...question,
-				optionOne: {
-					votes: ["ahmed3ba2i"],
-					text: "Would you jump in the water",
-				},
-				optionTwo: {
-					votes: ["lolo"],
-					text: "Would you stay in the water for 10 hours",
-				},
+				...formattedQuestion,
 			})
 			.then(() => {
 				dispatch({
