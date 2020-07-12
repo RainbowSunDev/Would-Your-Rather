@@ -5,7 +5,8 @@ import { signOut } from "../actions/authAction";
 
 class NavBar extends React.Component {
 	render() {
-		const { isLoggedIn, avatarURL } = this.props;
+		const { isLoggedIn, profile } = this.props;
+		console.log("NAV", profile);
 		return (
 			<nav className="nav">
 				<ul>
@@ -39,12 +40,7 @@ class NavBar extends React.Component {
 									className="signin"
 									onClick={this.props.signOut}
 								>
-									<img
-										src={String(avatarURL)}
-										className="avatar"
-										alt={"avatar"}
-									/>
-									Logout
+									Hello, {profile.username}
 								</NavLink>
 							</li>
 						</React.Fragment>
@@ -68,9 +64,10 @@ class NavBar extends React.Component {
 	}
 }
 const mapStateToProps = (state) => {
+	console.log(state);
 	return {
 		isLoggedIn: !state.firebase.auth.isEmpty,
-		avatarURL: "https://i.ibb.co/8cWd0BC/avatar6.jpg",
+		profile: state.firebase.profile,
 	};
 };
 const mapDispatchToProps = (dispatch) => {

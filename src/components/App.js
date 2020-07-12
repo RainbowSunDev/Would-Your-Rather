@@ -5,24 +5,20 @@ import { BrowserRouter as Router } from "react-router-dom";
 import { compose } from "redux";
 
 import NavBar from "./Nav";
-
+import Dashboard from "./Dashboard";
 import HomePage from "./HomePage";
 import { firestoreConnect } from "react-redux-firebase";
 class App extends Component {
-	componentDidMount() {
-		/* 		this.props.dispatch(handleInitialData());
-		 */ console.log("store", this.props);
-	}
-
 	render() {
-		const { authUser } = this.props;
+		const { authError } = this.props;
+		console.log("__APP__", this.props);
 
 		return (
 			<div className="app">
 				<Router>
-					<NavBar authUser={authUser} />
+					<NavBar authUser={authError} />
 
-					{authUser !== null && <HomePage users={this.props.users} />}
+					{authError === null ? <HomePage users={this.props.users} /> : null}
 				</Router>
 			</div>
 		);
@@ -30,12 +26,13 @@ class App extends Component {
 }
 
 function mapStateToProps(state) {
-	console.log(state);
 	return {
 		users: state.firestore.data.users,
+		authError: state.authUser.authError,
+		questions: state.firestore.data.questions,
 	};
 }
 export default compose(
 	connect(mapStateToProps),
-	firestoreConnect([{ collection: "users" }])
+	firestoreConnect([{ collection: "users" }, { collection: "questions" }])
 )(App);
