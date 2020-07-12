@@ -32,7 +32,6 @@ export const signUp = (newUser) => {
 	return (dispatch, getState, { getFirebase, getFirestore }) => {
 		const firebase = getFirebase();
 		const firestore = getFirestore();
-		console.log("This is the new user", newUser);
 
 		firebase
 			.auth()
@@ -44,8 +43,8 @@ export const signUp = (newUser) => {
 					.set({
 						fname: newUser.fname,
 						username: newUser.username,
-						answers: [],
-						questions: {},
+						answers: {},
+						questions: [],
 						avatarURL:
 							defaultAvatars[Math.floor(Math.random() * defaultAvatars.length)],
 					});

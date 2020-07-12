@@ -8,17 +8,21 @@ import NavBar from "./Nav";
 import Dashboard from "./Dashboard";
 import HomePage from "./HomePage";
 import { firestoreConnect } from "react-redux-firebase";
+import NewQuestion from "./NewQuestion";
 class App extends Component {
 	render() {
 		const { authError } = this.props;
-		console.log("__APP__", this.props);
 
 		return (
 			<div className="app">
 				<Router>
 					<NavBar authUser={authError} />
 
-					{authError === null ? <HomePage users={this.props.users} /> : null}
+					{authError !== null ? (
+						<HomePage users={this.props.users} />
+					) : (
+						<NewQuestion />
+					)}
 				</Router>
 			</div>
 		);

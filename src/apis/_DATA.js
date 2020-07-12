@@ -141,9 +141,10 @@ export function _getQuestions() {
 	});
 }
 
-export function formatQuestion({ optionOneText, optionTwoText, author }) {
+export function formatQuestion({ optionOneText, optionTwoText, author, uid }) {
 	return {
 		id: generateUID(),
+
 		timestamp: Date.now(),
 		author,
 		optionOne: {
@@ -154,6 +155,7 @@ export function formatQuestion({ optionOneText, optionTwoText, author }) {
 			votes: [],
 			text: optionTwoText,
 		},
+		uid: uid,
 	};
 }
 export function formatUser({ username, name, email, password }) {
