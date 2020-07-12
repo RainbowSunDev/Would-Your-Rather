@@ -34,6 +34,7 @@ code {
   padding-right: 50px;
   padding-left: 50px;
   padding-top: 16px;
+
 }
 
 .nav ul li {
@@ -66,10 +67,11 @@ a {
 .signin {
   background-color: #149dcc;
   text-align: center;
-  padding: 13px 20px;
+  padding: 20px 10px;
   border-radius: 30px;
   font-size: 15px;
   font-weight: 700;
+
 }
 
 .signin:hover {
@@ -142,4 +144,12 @@ a {
 .login {
   background-color: red;
   height: 200px;
+}
+
+.avatar {
+  width: 2%;
+  border-radius: 50%;
+  position: fixed;
+  right: 50px;
+
 }

@@ -171,8 +171,8 @@ class HomePage extends Component {
 	}
 	render() {
 		const isLoading = this.state.loading;
-		const { authError } = this.props;
-		return (
+		/* 		const { authError } = this.props;
+		 */ return (
 			<div>
 				{this.pageLayout()}
 				<ReactModalLogin
