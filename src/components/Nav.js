@@ -4,7 +4,8 @@ import { NavLink } from "react-router-dom";
 
 class NavBar extends React.Component {
 	render() {
-		const { name } = this.props;
+		const { authError } = this.props;
+		console.log(authError);
 		return (
 			<nav className="nav">
 				<ul>
@@ -35,11 +36,7 @@ class NavBar extends React.Component {
 							activeClassName="active"
 							className="signin"
 						>
-							{name === null ? (
-								<span>Sign in</span>
-							) : (
-								<span>Hello, {name}</span>
-							)}
+							{authError === null ? <span>Sign in</span> : <span>Logout</span>}
 						</NavLink>
 					</li>
 				</ul>
@@ -47,14 +44,9 @@ class NavBar extends React.Component {
 		);
 	}
 }
-function mapStateToProps({ authUser, users }) {
-	const user = users[authUser];
-	const name = null;
-	if (user !== undefined) {
-		const name = user.name.split(" ")[0];
-		return { name };
-	}
-
-	return { name };
+function mapStateToProps(state) {
+	return {
+		authError: state.authUser.authError,
+	};
 }
 export default connect(mapStateToProps)(NavBar);

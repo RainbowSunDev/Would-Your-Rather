@@ -1,8 +1,4 @@
-import {
-	GET_QUESTIONS,
-	ADD_QUESTION,
-	CREATE_QUESTION_ERROR,
-} from "../actions/questions";
+import { ADD_QUESTION, CREATE_QUESTION_ERROR } from "../actions/questions";
 
 export default function questions(state = {}, action) {
 	switch (action.type) {
