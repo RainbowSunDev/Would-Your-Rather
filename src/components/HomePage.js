@@ -3,9 +3,7 @@ import { connect } from "react-redux";
 import ReactModalLogin from "react-modal-login";
 import { facebookConfig, googleConfig } from "../API/social-config";
 
-/* import addNewQuestion from "../actions/questions";
-import addNewUser from "../actions/users"; */
-import { signIn } from "../actions/authAction";
+import { signIn, signUp } from "../actions/authAction";
 
 class HomePage extends Component {
 	constructor(props) {
@@ -36,16 +34,7 @@ class HomePage extends Component {
 		} else {
 			this.onLoginSuccess("form");
 		}
-		/* if (Object.keys(this.props.users).includes(email) !== true) {
-			alert("Not valid user");
-			return;
-		}
-		const validUser = users[email];
-		console.log(validUser);
-		if (password === validUser.password) {
-			this.props.setAuthUser(email);
-			this.props.handleAuthedUser(email);
-		} */
+
 		this.props.signIn({ email, password });
 	}
 
@@ -67,10 +56,10 @@ class HomePage extends Component {
 		} else {
 			this.onLoginSuccess("form");
 		}
-		this.props.createUser({
+		this.props.signUp({
 			email: email,
 			password: password,
-			name: fullName,
+			fname: fullName,
 			username: login,
 		});
 	}
@@ -181,16 +170,6 @@ class HomePage extends Component {
 		);
 	}
 	render() {
-		/* const loggedIn = this.state.loggedIn ? (
-			<div>
-				<p>You are signed in with: {this.state.loggedIn}</p>
-			</div>
-		) : (
-			<div>
-				<p>You are signed out</p>
-			</div>
-		); */
-
 		const isLoading = this.state.loading;
 		const { authError } = this.props;
 		return (
@@ -321,13 +300,7 @@ class HomePage extends Component {
 		);
 	}
 }
-/* const mapStateToProps = (dispatch, state) => {
-	return {
-		createQuestion: (question) => dispatch(addNewQuestion(question)),
-		createUser: (user) => dispatch(addNewUser(user)),
-		setAuthUser: (authedUser) => dispatch(receiveAuthUser(authedUser)),
-	};
-}; */
+
 const mapStateToProps = (state) => {
 	return {
 		authError: state.authUser.authError,
@@ -336,6 +309,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
 	return {
 		signIn: (creds) => dispatch(signIn(creds)),
+		signUp: (newUser) => dispatch(signUp(newUser)),
 	};
 };
 export default connect(mapStateToProps, mapDispatchToProps)(HomePage);

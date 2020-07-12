@@ -33,7 +33,7 @@ let users = {
 		questions: ["6ni6ok3ym7mf1p33lnez", "xj352vofupe1dqz9emx13r"],
 	},
 };
-const defaultAvatars = [
+export const defaultAvatars = [
 	"../assets/maleAvatars/avatar1.jpg",
 	"../assets/maleAvatars/avatar2.jpg",
 	"../assets/maleAvatars/avatar3.jpg",

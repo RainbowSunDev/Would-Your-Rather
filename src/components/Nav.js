@@ -1,11 +1,11 @@
 import React from "react";
 import { connect } from "react-redux";
 import { NavLink } from "react-router-dom";
+import { signOut } from "../actions/authAction";
 
 class NavBar extends React.Component {
 	render() {
-		const { authError } = this.props;
-		console.log(authError);
+		const { isLoggedIn } = this.props;
 		return (
 			<nav className="nav">
 				<ul>
@@ -19,34 +19,57 @@ class NavBar extends React.Component {
 							Home
 						</NavLink>
 					</li>
-					<li>
-						<NavLink to="/add" exact activeClassName="active">
-							New Question
-						</NavLink>
-					</li>
-					<li>
-						<NavLink to="/leader-board" exact activeClassName="active">
-							Leaderboard
-						</NavLink>
-					</li>
-					<li>
-						<NavLink
-							to="/signin"
-							exact
-							activeClassName="active"
-							className="signin"
-						>
-							{authError === null ? <span>Sign in</span> : <span>Logout</span>}
-						</NavLink>
-					</li>
+					{isLoggedIn ? (
+						<React.Fragment>
+							<li>
+								<NavLink to="/add" exact activeClassName="active">
+									New Question
+								</NavLink>
+							</li>
+							<li>
+								<NavLink to="/leader-board" exact activeClassName="active">
+									Leaderboard
+								</NavLink>
+							</li>
+							<li>
+								<NavLink
+									to="/"
+									exact
+									activeClassName="active"
+									className="signin"
+									onClick={this.props.signOut}
+								>
+									Logout
+								</NavLink>
+							</li>
+						</React.Fragment>
+					) : (
+						<React.Fragment>
+							<li>
+								<NavLink to="/about" exact activeClassName="active">
+									About
+								</NavLink>
+							</li>
+							<li>
+								<NavLink to="/signin" exact activeClassName="active">
+									Sign in
+								</NavLink>
+							</li>
+						</React.Fragment>
+					)}
 				</ul>
 			</nav>
 		);
 	}
 }
-function mapStateToProps(state) {
+const mapStateToProps = (state) => {
 	return {
-		authError: state.authUser.authError,
+		isLoggedIn: !state.firebase.auth.isEmpty,
 	};
-}
-export default connect(mapStateToProps)(NavBar);
+};
+const mapDispatchToProps = (dispatch) => {
+	return {
+		signOut: () => dispatch(signOut()),
+	};
+};
+export default connect(mapStateToProps, mapDispatchToProps)(NavBar);

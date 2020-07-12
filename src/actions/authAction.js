@@ -1,3 +1,11 @@
+let defaultAvatars = [
+	"../assets/maleAvatars/avatar1.jpg",
+	"../assets/maleAvatars/avatar2.jpg",
+	"../assets/maleAvatars/avatar3.jpg",
+	"../assets/maleAvatars/avatar4.jpg",
+	"../assets/maleAvatars/avatar5.jpg",
+	"../assets/maleAvatars/avatar6.jpg",
+];
 export const signIn = (credentials) => {
 	return (dispatch, getState, { getFirebase }) => {
 		const firebase = getFirebase();
@@ -10,6 +18,51 @@ export const signIn = (credentials) => {
 			})
 			.catch((err) => {
 				dispatch({ type: "LOGIN_ERROR", err });
+			});
+	};
+};
+
+export const signOut = () => {
+	return (dispatch, getState, { getFirebase }) => {
+		const firebase = getFirebase();
+
+		firebase
+			.auth()
+			.signOut()
+			.then(() => {
+				dispatch({ type: "SIGNOUT_SUCCESS" });
+			});
+	};
+};
+
+export const signUp = (newUser) => {
+	return (dispatch, getState, { getFirebase, getFirestore }) => {
+		const firebase = getFirebase();
+		const firestore = getFirestore();
+		console.log("This is the new user", newUser);
+
+		firebase
+			.auth()
+			.createUserWithEmailAndPassword(newUser.email, newUser.password)
+			.then((resp) => {
+				return firestore
+					.collection("users")
+					.doc(resp.user.uid)
+					.set({
+						fname: newUser.fname,
+						username: newUser.username,
+						answers: [],
+						questions: {},
+						avatarURL:
+							defaultAvatars[Math.floor(Math.random() * defaultAvatars.length)],
+					});
+			})
+			.then(() => {
+				dispatch({ type: "SIGNUP_SUCCESS" });
+			})
+
+			.catch((err) => {
+				dispatch({ type: "SIGNUP_FAILED", err });
 			});
 	};
 };
