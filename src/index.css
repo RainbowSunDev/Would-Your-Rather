@@ -13,7 +13,8 @@ body {
   -moz-osx-font-smoothing: grayscale;
 
 
-  background-image: url('./assets/Illustrator.jpeg');
+  /*   background-image: url('./assets/Illustrator.jpeg');
+ */
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
@@ -199,10 +200,10 @@ h1 {
   margin-bottom: 2.5%;
 }
 
-input,
-span,
-label,
-textarea {
+.col input,
+.col span,
+.col label,
+.col textarea {
   font-family: 'Ubuntu', sans-serif;
   display: block;
 
@@ -211,15 +212,15 @@ textarea {
   font-size: 2px;
 }
 
-textarea:focus,
-input:focus {
+.col textarea:focus,
+.col input:focus {
   outline: 0;
 }
 
 /* Question */
 
-input.question,
-textarea.question {
+.col input.question,
+.col textarea.question {
   font-size: 40px;
   font-weight: 300;
   border-radius: 2px;
@@ -234,8 +235,8 @@ textarea.question {
 
 /* Underline and Placeholder */
 
-input.question+label,
-textarea.question+label {
+.col input.question+label,
+.col textarea.question+label {
   display: block;
   position: relative;
   white-space: nowrap;
@@ -248,47 +249,47 @@ textarea.question+label {
   height: 0px;
 }
 
-input.question:focus+label,
-textarea.question:focus+label {
+.col input.question:focus+label,
+.col textarea.question:focus+label {
   width: 80%;
 }
 
-input.question:focus,
-input.question:valid {
+.col input.question:focus,
+.col input.question:valid {
   padding-top: 35px;
 }
 
-textarea.question:valid,
-textarea.question:focus {
+.col textarea.question:valid,
+.col textarea.question:focus {
   margin-top: 3px;
 }
 
-input.question:focus+label>span,
-input.question:valid+label>span {
+.col input.question:focus+label>span,
+.col input.question:valid+label>span {
   top: -100px;
   font-size: 22px;
   color: #333;
 }
 
-textarea.question:focus+label>span,
-textarea.question:valid+label>span {
+.col textarea.question:focus+label>span,
+.col textarea.question:valid+label>span {
   top: -150px;
   font-size: 22px;
   color: #333;
 }
 
-input.question:valid+label,
-textarea.question:valid+label {
+.col input.question:valid+label,
+.col textarea.question:valid+label {
   border-color: green;
 }
 
-input.question:invalid,
-textarea.question:invalid {
+.col input.question:invalid,
+.col textarea.question:invalid {
   box-shadow: none;
 }
 
-input.question+label>span,
-textarea.question+label>span {
+.col input.question+label>span,
+.col textarea.question+label>span {
   font-weight: 300;
   margin: 0;
   position: absolute;
@@ -301,7 +302,7 @@ textarea.question+label>span {
   transition: top 0.2s ease, font-size 0.2s ease, color 0.2s ease;
 }
 
-input[type="submit"] {
+.col input[type="submit"] {
   -webkit-transition: opacity 0.2s ease, background 0.2s ease;
   transition: opacity 0.2s ease, background 0.2s ease;
   display: block;
@@ -311,22 +312,22 @@ input[type="submit"] {
   cursor: pointer;
 }
 
-input[type="submit"]:hover {
+.col input[type="submit"]:hover {
   background: #EEE;
 }
 
-input[type="submit"]:active {
+.col input[type="submit"]:active {
   background: #999;
 }
 
-input.question:valid~input[type="submit"],
-textarea.question:valid~input[type="submit"] {
+.col input.question:valid~input[type="submit"],
+.col textarea.question:valid~input[type="submit"] {
   -webkit-animation: appear 1s forwards;
   animation: appear 1s forwards;
 }
 
-input.question:invalid~input[type="submit"],
-textarea.question:invalid~input[type="submit"] {
+.col input.question:invalid~input[type="submit"],
+.col textarea.question:invalid~input[type="submit"] {
   display: none;
 }
 
