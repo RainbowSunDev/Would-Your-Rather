@@ -9,6 +9,8 @@ import Dashboard from "./Dashboard";
 import HomePage from "./HomePage";
 import { firestoreConnect } from "react-redux-firebase";
 import NewQuestion from "./NewQuestion";
+import SignPage from "./SignPage";
+
 class App extends Component {
 	render() {
 		const { authError } = this.props;
@@ -21,7 +23,7 @@ class App extends Component {
 					{authError !== null ? (
 						<HomePage users={this.props.users} />
 					) : (
-						<NewQuestion />
+						<SignPage />
 					)}
 				</Router>
 			</div>
