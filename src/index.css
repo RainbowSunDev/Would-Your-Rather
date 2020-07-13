@@ -12,10 +12,15 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  background-image: linear-gradient(to top, #d9afd9 0%, #97d9e1 100%);
+
+  background-image: url('./assets/Illustrator.jpeg');
+  background-size: contain;
+  background-position: center;
   background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
+
+  background-position-y: 150px;
+  background-position-x: 100px;
+
 }
 
 code {
@@ -154,8 +159,8 @@ a {
 .col {
   display: flex;
   flex-direction: column;
-  margin: 50px 50px;
-  align-items: center;
+  margin: 100px 80px;
+  align-items: flex-start;
 }
 
 .photo {
@@ -339,8 +344,8 @@ textarea.question:invalid~input[type="submit"] {
 
 .form-title {
   font-size: 60px;
-  margin: 50px;
-  color: #1389b1;
+  margin: 50px 50px 50px -5px;
+  color: #405885;
 }
 
 #msg {
@@ -415,4 +420,109 @@ textarea.question:invalid~input[type="submit"] {
 .link a {
   color: #000;
   font-size: 25px;
+}
+
+
+
+/* SECTION MENU */
+
+
+.menu:hover .menu__link:not(:hover) {
+  color: rgb(150, 150, 150);
+}
+
+.menu__list {
+  display: flex;
+  text-align: center;
+  padding-left: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+  list-style: none;
+}
+
+.menu__group {
+  flex-grow: 1;
+}
+
+.menu__link {
+  display: block;
+}
+
+/* skin */
+
+.menu {
+
+  margin: 5px 30px;
+
+}
+
+.menu__link {
+  padding: 2rem 1.5rem;
+
+  font-weight: 700;
+  color: #241c69;
+  text-decoration: none;
+  text-transform: uppercase;
+
+
+}
+
+/* states */
+.menu__link:focus {
+  outline: 1px solid white;
+
+}
+
+/* hover animation */
+
+.menu__link {
+  position: relative;
+  overflow: hidden;
+
+  will-change: color;
+  transition: color .25s ease-out;
+}
+
+.menu__link::before,
+.menu__link::after {
+  content: "";
+  width: 0;
+  height: 3px;
+  background-color: #241c69;
+
+  will-change: width;
+  transition: width .1s ease-out;
+
+  position: absolute;
+  bottom: 0;
+}
+
+.menu__link::before {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.menu__link::after {
+  right: 50%;
+  transform: translateX(50%);
+}
+
+.menu__link:hover::before,
+.menu__link:hover::after {
+  width: 100%;
+  transition-duration: .2s;
+}
+
+.logo {
+
+  font-size: 35px;
+  color: #241c69;
+  font-weight: 700;
+
+  position: relative;
+  left: 20px;
+  top: 25px;
+  margin-right: 500px;
+
+
 }

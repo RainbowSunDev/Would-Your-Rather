@@ -8,7 +8,43 @@ class NavBar extends React.Component {
 		const { isLoggedIn, profile } = this.props;
 		console.log("NAV", profile);
 		return (
-			<nav className="nav">
+			<nav className="menu">
+				<ul className="menu__list">
+					<li className="menu__group">
+						<NavLink to="/" exact className="logo">
+							WYR?
+						</NavLink>
+					</li>
+					<li className="menu__group">
+						<NavLink to="/" exact className="menu__link">
+							Home
+						</NavLink>
+					</li>
+					<li className="menu__group">
+						<NavLink to="/" exact className="menu__link">
+							New Poll
+						</NavLink>
+					</li>
+					<li className="menu__group">
+						<NavLink to="/" exact className="menu__link">
+							Leaderboard
+						</NavLink>
+					</li>
+					<li className="menu__group">
+						<NavLink
+							to="/"
+							exact
+							className="menu__link"
+							onClick={this.props.signOut}
+						>
+							Hello, {profile.username}
+						</NavLink>
+					</li>
+				</ul>
+			</nav>
+		);
+		{
+			/* <nav className="nav">
 				<ul>
 					<li className="logo">
 						<NavLink to="/">
@@ -59,8 +95,8 @@ class NavBar extends React.Component {
 						</React.Fragment>
 					)}
 				</ul>
-			</nav>
-		);
+			</nav> */
+		}
 	}
 }
 const mapStateToProps = (state) => {

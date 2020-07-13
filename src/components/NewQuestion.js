@@ -89,7 +89,6 @@ class NewQuestion extends Component {
 					</label>
 					<textarea
 						name="message"
-						rows="2"
 						className="question"
 						id="msg"
 						value={optionTwo}
@@ -112,7 +111,7 @@ class NewQuestion extends Component {
 						onClick={this.handleSubmit}
 						disabled={optionOne === "" || optionTwo === ""}
 					>
-						<span>SEND POLL!</span>
+						<span>POST POLL!</span>
 					</button>
 				</div>
 				{/* 	Add Question
