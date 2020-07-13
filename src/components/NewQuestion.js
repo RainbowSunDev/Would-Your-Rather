@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import addNewQuestion from "../actions/questions";
+import Game from "../assets/Game.jpeg";
 class NewQuestion extends Component {
 	state = {
 		optionOne: "",
@@ -12,6 +13,7 @@ class NewQuestion extends Component {
 		this.setState(() => ({ optionOne: optionOne }));
 	};
 	handleOptionTwoChange = (event) => {
+		console.log(this.state);
 		const optionTwo = event.target.value;
 		this.setState({ optionTwo: optionTwo });
 	};
@@ -32,40 +34,91 @@ class NewQuestion extends Component {
 			optionTwoText: optionTwo,
 			uid: uid,
 		});
-		this.setState(() => ({
-			optionOne: "",
-			optionTwo: "",
-		}));
+		setInterval(
+			() =>
+				this.setState(() => ({
+					optionOne: "",
+					optionTwo: "",
+				})),
+			1000
+		);
 	};
 	render() {
 		const { optionOne, optionTwo } = this.state;
 
 		return (
-			<div>
-				<form onSubmit={this.handleSubmit}>
-					<textarea
+			<div className="col">
+				{/* 				<img src={Game} width="70%" alt="" className="photo" />
+				 */}
+				{/* 				<form onSubmit={this.handleSubmit} className="form-container">
+				 */}{" "}
+				{/* <header className="form-title">Create New Poll Now!</header>
+					<header className="subtitle">
+						Add new poll and let your friend choose.
+					</header>
+					<header className="font-rubrik">Would you rather ..</header> */}
+				{/* <input
 						placeholder="Option One"
 						value={optionOne}
-						className="textarea"
+						className="textarea font-rubrik"
 						onChange={this.handleOptionOneChange}
 						maxLength={280}
-					></textarea>
-					<textarea
+					></input>
+					<header className="pad-bottom font-rubrik">OR</header>
+					<input
 						placeholder="Option Two"
 						value={optionTwo}
-						className="textarea"
+						className="textarea font-rubrik"
 						onChange={this.handleOptionTwoChange}
 						maxLength={280}
+					></input> */}
+				<h1 className="form-title">Would You Rather..</h1>
+				<form>
+					<input
+						type="text"
+						name="name"
+						className="question"
+						id="nme"
+						value={optionOne}
+						required
+						autocomplete="off"
+						onChange={this.handleOptionOneChange}
+					/>
+					<label for="nme">
+						<span>option one?</span>
+					</label>
+					<textarea
+						name="message"
+						rows="2"
+						className="question"
+						id="msg"
+						value={optionTwo}
+						required
+						autocomplete="off"
+						onChange={this.handleOptionTwoChange}
 					></textarea>
-
+					<label for="msg">
+						<span className="option">option two?</span>
+					</label>
+				</form>
+				{/* 	<button
+					className="form-button"
+					type="submit"
+					disabled={optionOne === "" || optionTwo === ""}
+				> */}
+				<div class="button_container">
 					<button
-						className="btn2"
-						type="submit"
+						class="btn"
+						onClick={this.handleSubmit}
 						disabled={optionOne === "" || optionTwo === ""}
 					>
-						Add Question
+						<span>SEND POLL!</span>
 					</button>
-				</form>
+				</div>
+				{/* 	Add Question
+				</button> */}
+				{/* 				</form>
+				 */}{" "}
 			</div>
 		);
 	}

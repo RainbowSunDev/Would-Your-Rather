@@ -21,7 +21,6 @@ export default function addNewQuestion(question) {
 			.doc(formattedQuestion.id)
 
 			.set({
-				...question,
 				...formattedQuestion,
 			})
 			.then(() => {
