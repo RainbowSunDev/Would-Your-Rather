@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import loginImg from "../../assets/login.svg";
 import "./formstyle.scss";
 import { signIn } from "../../actions/authAction";
+import { Redirect } from "react-router-dom";
 
 class Login extends React.Component {
 	constructor(props) {
@@ -11,6 +12,7 @@ class Login extends React.Component {
 		this.state = {
 			email: "",
 			password: "",
+			toHome: false,
 		};
 	}
 	handleEmail = (e) => {
@@ -23,10 +25,13 @@ class Login extends React.Component {
 		console.log("logging in ", this.state);
 		this.props.signIn(this.state);
 
-		this.setState({ email: "", password: "" });
+		this.setState({ email: "", password: "", toHome: true });
 	};
 	render() {
-		const { email, password } = this.state;
+		const { email, password, toHome } = this.state;
+		if (toHome === true) {
+			return <Redirect to="/" />;
+		}
 		return (
 			<div className="base-container" ref={this.props.containerRef}>
 				<div className="header">Login</div>

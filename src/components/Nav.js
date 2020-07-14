@@ -5,7 +5,7 @@ import { signOut } from "../actions/authAction";
 
 class NavBar extends React.Component {
 	render() {
-		const { isLoggedIn, profile } = this.props;
+		const { isLoggedIn } = this.props;
 		console.log("NAV", this.props);
 		return (
 			<nav className="menu">
@@ -39,7 +39,7 @@ class NavBar extends React.Component {
 									className="menu__link"
 									onClick={this.props.signOut}
 								>
-									Hello, {profile.username}
+									Logout
 								</NavLink>
 							</li>
 						</React.Fragment>
