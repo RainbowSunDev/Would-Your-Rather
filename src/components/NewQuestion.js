@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import addNewQuestion from "../actions/questions";
-import Game from "../assets/Game.jpeg";
+
 class NewQuestion extends Component {
 	state = {
 		optionOne: "",
@@ -21,13 +21,8 @@ class NewQuestion extends Component {
 	handleSubmit = (e) => {
 		e.preventDefault();
 
-		//TODO Add it to the tweets
 		const { uid, profile, addNewQuestion } = this.props;
 		const { optionOne, optionTwo } = this.state;
-		/* 		dispatch(handleAddTweet(text, id));
-        
-		 */
-
 		addNewQuestion({
 			author: profile.fname,
 			optionOneText: optionOne,
@@ -47,31 +42,7 @@ class NewQuestion extends Component {
 		const { optionOne, optionTwo } = this.state;
 
 		return (
-			<div className="col">
-				{/* 				<img src={Game} width="70%" alt="" className="photo" />
-				 */}
-				{/* 				<form onSubmit={this.handleSubmit} className="form-container">
-				 */}{" "}
-				{/* <header className="form-title">Create New Poll Now!</header>
-					<header className="subtitle">
-						Add new poll and let your friend choose.
-					</header>
-					<header className="font-rubrik">Would you rather ..</header> */}
-				{/* <input
-						placeholder="Option One"
-						value={optionOne}
-						className="textarea font-rubrik"
-						onChange={this.handleOptionOneChange}
-						maxLength={280}
-					></input>
-					<header className="pad-bottom font-rubrik">OR</header>
-					<input
-						placeholder="Option Two"
-						value={optionTwo}
-						className="textarea font-rubrik"
-						onChange={this.handleOptionTwoChange}
-						maxLength={280}
-					></input> */}
+			<div className="col page-bkg">
 				<h1 className="form-title">Would You Rather..</h1>
 				<form>
 					<input
@@ -81,11 +52,11 @@ class NewQuestion extends Component {
 						id="nme"
 						value={optionOne}
 						required
-						autocomplete="off"
+						autoComplete="off"
 						onChange={this.handleOptionOneChange}
 					/>
 
-					<label for="nme">
+					<label htmlFor="nme">
 						<span>option one?</span>
 					</label>
 					<textarea
@@ -94,31 +65,23 @@ class NewQuestion extends Component {
 						id="msg"
 						value={optionTwo}
 						required
-						autocomplete="off"
+						autoComplete="off"
 						onChange={this.handleOptionTwoChange}
 					></textarea>
-					<label for="msg">
+					<label htmlFor="msg">
 						<span className="option">option two?</span>
 					</label>
 				</form>
-				{/* 	<button
-					className="form-button"
-					type="submit"
-					disabled={optionOne === "" || optionTwo === ""}
-				> */}
-				<div class="button_container">
+
+				<div className="button_container">
 					<button
-						class="btn"
+						className="btn"
 						onClick={this.handleSubmit}
 						disabled={optionOne === "" || optionTwo === ""}
 					>
 						<span>POST POLL!</span>
 					</button>
 				</div>
-				{/* 	Add Question
-				</button> */}
-				{/* 				</form>
-				 */}{" "}
 			</div>
 		);
 	}

@@ -1,11 +1,12 @@
 import React, { Component } from "react";
-import { BrowserRouter as Router } from "react-router-dom";
-/* import { handleInitialData } from "../actions/shared";
- */ import { connect } from "react-redux";
+
+import { BrowserRouter as Router, Route } from "react-router-dom";
+
+import { connect } from "react-redux";
 import { compose } from "redux";
 
 import NavBar from "./Nav";
-import Dashboard from "./Dashboard";
+
 import HomePage from "./HomePage";
 import { firestoreConnect } from "react-redux-firebase";
 import NewQuestion from "./NewQuestion";
@@ -18,13 +19,15 @@ class App extends Component {
 		return (
 			<div className="app">
 				<Router>
-					<NavBar authUser={authError} />
+					<React.Fragment>
+						<NavBar authError={authError} />
 
-					{authError !== null ? (
-						<HomePage users={this.props.users} />
-					) : (
-						<SignPage />
-					)}
+						<div>
+							<Route path="/" exact component={HomePage} />
+							<Route path="/sign" component={SignPage} />
+							<Route path="/new" exact component={NewQuestion} />
+						</div>
+					</React.Fragment>
 				</Router>
 			</div>
 		);

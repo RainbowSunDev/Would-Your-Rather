@@ -1,6 +1,7 @@
 import React from "react";
 import "./App.scss";
-import { Login, Register } from "./Login/index";
+import Login from "./Login/login";
+import Register from "./Login/register";
 
 class SignPage extends React.Component {
 	constructor(props) {

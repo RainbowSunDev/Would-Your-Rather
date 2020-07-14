@@ -6,7 +6,7 @@ import { signOut } from "../actions/authAction";
 class NavBar extends React.Component {
 	render() {
 		const { isLoggedIn, profile } = this.props;
-		console.log("NAV", profile);
+		console.log("NAV", this.props);
 		return (
 			<nav className="menu">
 				<ul className="menu__list">
@@ -20,60 +20,23 @@ class NavBar extends React.Component {
 							Home
 						</NavLink>
 					</li>
-					<li className="menu__group">
-						<NavLink to="/" exact className="menu__link">
-							New Poll
-						</NavLink>
-					</li>
-					<li className="menu__group">
-						<NavLink to="/" exact className="menu__link">
-							Leaderboard
-						</NavLink>
-					</li>
-					<li className="menu__group">
-						<NavLink
-							to="/"
-							exact
-							className="menu__link"
-							onClick={this.props.signOut}
-						>
-							Hello, {profile.username}
-						</NavLink>
-					</li>
-				</ul>
-			</nav>
-		);
-		{
-			/* <nav className="nav">
-				<ul>
-					<li className="logo">
-						<NavLink to="/">
-							<div className="logo-text">WYR?</div>
-						</NavLink>
-					</li>
-					<li>
-						<NavLink to="/" exact activeClassName="active">
-							Home
-						</NavLink>
-					</li>
-					{isLoggedIn ? (
+					{isLoggedIn === true ? (
 						<React.Fragment>
-							<li>
-								<NavLink to="/add" exact activeClassName="active">
-									New Question
+							<li className="menu__group">
+								<NavLink to="/new" exact className="menu__link">
+									New Poll
 								</NavLink>
 							</li>
-							<li>
-								<NavLink to="/leader-board" exact activeClassName="active">
+							<li className="menu__group">
+								<NavLink to="/leaderboard" exact className="menu__link">
 									Leaderboard
 								</NavLink>
 							</li>
-							<li>
+							<li className="menu__group">
 								<NavLink
 									to="/"
 									exact
-									activeClassName="active"
-									className="signin"
+									className="menu__link"
 									onClick={this.props.signOut}
 								>
 									Hello, {profile.username}
@@ -81,22 +44,15 @@ class NavBar extends React.Component {
 							</li>
 						</React.Fragment>
 					) : (
-						<React.Fragment>
-							<li>
-								<NavLink to="/about" exact activeClassName="active">
-									About
-								</NavLink>
-							</li>
-							<li>
-								<NavLink to="/signin" exact activeClassName="active">
-									Sign in
-								</NavLink>
-							</li>
-						</React.Fragment>
+						<li className="menu__group">
+							<NavLink to="/sign" exact className="menu__link">
+								Join us!
+							</NavLink>
+						</li>
 					)}
 				</ul>
-			</nav> */
-		}
+			</nav>
+		);
 	}
 }
 const mapStateToProps = (state) => {

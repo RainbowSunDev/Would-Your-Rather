@@ -13,15 +13,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
 
 
-  /*   background-image: url('./assets/Illustrator.jpeg');
- */
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
-
-  background-position-y: 150px;
-  background-position-x: 100px;
-
 }
 
 code {
@@ -526,4 +517,12 @@ h1 {
   margin-right: 500px;
 
 
+}
+
+.page-bkg {
+  background-image: url(./assets/Illustrator.jpeg);
+  background-size: 650px 550px;
+  background-repeat: no-repeat;
+  background-position-y: -10px;
+  background-position-x: 700px;
 }
