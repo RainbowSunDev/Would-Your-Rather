@@ -9,6 +9,8 @@
     transition: all 0.3s ease 0s;
     color: rgba(26, 26, 26, 0.817);
 
+
+
 }
 
 .question-author-avatar {
@@ -31,9 +33,6 @@
     font-family: "Rubik", sans-serif;
     line-height: 1.5;
     font-size: 15px;
-
-
-
 }
 
 .item-container:hover {

@@ -27,9 +27,10 @@ class PollVoting extends Component {
 		} = this.props.selectedQuestion;
 		const { optionOneChecked, optionTwoChecked } = this.state;
 		console.log(this.state);
+
 		return (
 			<div className="poll-voting-container">
-				<h2>{author}</h2>
+				<h2>{author} Asks</h2>
 				<span>Would You Rather.. </span>
 				<form className="form">
 					<div className="inputGroup">
@@ -53,6 +54,13 @@ class PollVoting extends Component {
 						/>
 						<label htmlFor="option2">{optionTwo.text}</label>
 					</div>
+					<button
+						type="submit"
+						className="add-new-poll vote-btn"
+						disabled={optionTwoChecked === optionOneChecked}
+					>
+						VOTE
+					</button>
 				</form>
 			</div>
 		);
