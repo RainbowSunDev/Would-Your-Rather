@@ -11,26 +11,18 @@ class HomePage extends Component {
 			<div className="home-page column font-rubrik">
 				<div className="column">
 					<h1 className="title">Would You Rather?</h1>
-					<p className="description font-rubrik">
-						Click any text to edit or style it. Select text to insert a link.
+					<p className="website-description">
+						Would you rather is a website where you can play around with your
+						friends,
 						<br />
-						Click blue "Gear" icon in the top right corner to hide/show buttons,
+						You can post your own polls and answer your friends' ones.
 						<br />
-						Click red "+" in the bottom right corner to add a new block.
-						<br /> Use the top left menu to create new pages, sites and add
-						themes.
+						Join us now and have fun with your everyone.
 					</p>
-					<div className="row">
-						<button className="sign font-rubrik" onClick={this.openSignPage}>
-							Sign up
-						</button>
-						<button
-							className="sign font-rubrik border-width"
-							onClick={this.openSignPage}
-						>
-							Sign in
-						</button>
-					</div>
+
+					<button className="sign font-rubrik" onClick={this.openSignPage}>
+						JOIN US
+					</button>
 				</div>
 			</div>
 		);

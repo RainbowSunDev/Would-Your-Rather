@@ -81,16 +81,15 @@ a {
 }
 
 .home-page {
-  background-image: url("./assets/bkg.png");
+  background-image: url("./assets/Sweet\ couple\ talking\ sitting\ on\ bench.png");
   background-repeat: no-repeat;
+  background-size: initial;
+  background-position: right;
 
   height: 750px;
   width: 100%;
-  background-position: center;
-  /* Center the image */
-  background-size: cover;
-  /* Resize the background image to cover the entire container */
-  color: white;
+
+  color: #241c69;
 }
 
 .font-rubrik {
@@ -102,35 +101,58 @@ a {
 }
 
 .column {
-  margin: 0;
+
+  margin: 0px 20px;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
+  margin-bottom: 100px;
 }
 
 .column p {
-  text-align: center;
-  color: white;
-  font-size: 1.5rem;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  color: black;
+  font-size: 1.3rem;
   line-height: 1.6;
   font-style: normal;
+  margin-left: 12px;
+  margin-top: 5px;
+  margin-bottom: 30px;
+  text-align: left;
+
 }
 
+
 .sign {
-  padding: 20px 50px;
-  margin: 0 20px;
-  background-color: #e50439;
-  border: 0;
-  border-radius: 40px;
-  font-weight: 600;
-  font-size: 14px;
-  color: white;
+  width: 140px;
+  height: 45px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: 500;
+  color: #000;
+  background-color: #fff;
+  border: none;
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease 0s;
   cursor: pointer;
+  outline: none;
+  margin-left: 10px;
+
 }
 
 .sign:hover {
-  background-color: #ff3366;
+
+  background-color: #F83B4F;
+  box-shadow: 0px 12px 20px #f83b4e62;
+  color: #fff;
+  transform: translateY(-7px);
+
+
 }
 
 .border-width {
@@ -353,7 +375,6 @@ h1 {
 
 .description,
 .link {
-  font-family: 'Amatic SC', cursive;
   text-align: center;
 }
 
