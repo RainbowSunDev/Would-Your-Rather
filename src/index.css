@@ -96,8 +96,23 @@ a {
   font-family: "Rubik", sans-serif;
 }
 
+@keyframes ex {
+  0% {
+
+    left: -100%;
+  }
+
+  100% {
+
+    left: 0%;
+
+  }
+}
+
 .title {
   font-size: 68px;
+
+
 }
 
 .column {
@@ -108,6 +123,10 @@ a {
   align-items: flex-start;
   justify-content: center;
   margin-bottom: 100px;
+  transition: all 0.2s ease 0s;
+  position: relative;
+  animation-name: ex;
+  animation-duration: 2s;
 }
 
 .column p {

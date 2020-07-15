@@ -1,0 +1,18 @@
+.poll-voting-container {
+
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    transition: all 0.3s ease 0s;
+    margin-top: 90px;
+    padding: 30px;
+    margin-left: 2px;
+    margin-right: 30px;
+    background-color: #222323;
+    color: white;
+
+    box-shadow: 5px -5px 5px rgba(0, 0, 0, 0.2);
+    border-top-right-radius: 100px;
+    border-left: 0px solid black;
+
+}
