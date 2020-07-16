@@ -1,10 +1,13 @@
 import React, { Component } from "react";
+import { vote } from "../../actions/questions";
+
 import "./poll_vote.scss";
 import "./poll_vote.css";
+import { connect } from "react-redux";
 class PollVoting extends Component {
 	constructor(props) {
 		super(props);
-		this.state = { optionOneChecked: true, optionTwoChecked: true };
+		this.state = { optionOneChecked: false, optionTwoChecked: false };
 	}
 	toggleOption1Checked = () => {
 		this.setState((prevState) => {
@@ -16,18 +19,33 @@ class PollVoting extends Component {
 			return { optionTwoChecked: !prevState.optionTwoChecked };
 		});
 	};
+	handleVoting = (e) => {
+		e.preventDefault();
+		console.log("__HANDLE__VOTING___", this.props);
+		const { optionOneChecked } = this.state;
+		const { id } = this.props.selectedQuestion;
+		const { loggedInUser } = this.props;
+
+		let option;
+		if (optionOneChecked === true) {
+			option = "optionOne";
+		} else {
+			option = "optionTwo";
+		}
+
+		this.props.vote(id, option, loggedInUser);
+	};
 	render() {
 		const {
 			author,
 			uid,
 			id,
-			optionOne,
-			optionTwo,
+			optionOneText,
+			optionTwoText,
 			timestamp,
 		} = this.props.selectedQuestion;
 		const { optionOneChecked, optionTwoChecked } = this.state;
 		console.log(this.state);
-
 		return (
 			<div className="poll-voting-container">
 				<h2>{author} Asks</h2>
@@ -38,10 +56,10 @@ class PollVoting extends Component {
 							id="option1"
 							name="option1"
 							type="checkbox"
-							disabled={optionTwoChecked === false}
+							disabled={optionTwoChecked === true}
 							onClick={this.toggleOption1Checked}
 						/>
-						<label htmlFor="option1">{optionOne.text}</label>
+						<label htmlFor="option1">{optionOneText}</label>
 					</div>
 
 					<div className="inputGroup">
@@ -50,14 +68,15 @@ class PollVoting extends Component {
 							name="option2"
 							type="checkbox"
 							onClick={this.toggleOption2Checked}
-							disabled={optionOneChecked === false}
+							disabled={optionOneChecked === true}
 						/>
-						<label htmlFor="option2">{optionTwo.text}</label>
+						<label htmlFor="option2">{optionTwoText}</label>
 					</div>
 					<button
 						type="submit"
 						className="add-new-poll vote-btn"
-						disabled={optionTwoChecked === optionOneChecked}
+						disabled={optionOneChecked === optionTwoChecked}
+						onClick={this.handleVoting}
 					>
 						VOTE
 					</button>
@@ -66,4 +85,18 @@ class PollVoting extends Component {
 		);
 	}
 }
-export default PollVoting;
+const mapStateToProps = (state) => {
+	console.log("__THE STATE OF THE VOTING CMP", state);
+	const uid = state.firebase.auth.uid;
+	return {
+		loggedInUser: uid,
+	};
+};
+const mapDispatchToProps = (dispatch) => {
+	return {
+		vote: (qid, voting, loggedInUser) =>
+			dispatch(vote(qid, voting, loggedInUser)),
+	};
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(PollVoting);

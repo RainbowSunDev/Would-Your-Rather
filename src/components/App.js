@@ -13,7 +13,7 @@ import Dashboard from "./Dashboard/Dashboard";
 
 class App extends Component {
 	render() {
-		const { authError, questions } = this.props;
+		const { authError, questions, users } = this.props;
 		console.log("___APP___", this.props);
 		return (
 			<div className="app">
@@ -47,5 +47,8 @@ function mapStateToProps(state) {
 }
 export default compose(
 	connect(mapStateToProps),
-	firestoreConnect([{ collection: "users" }, { collection: "questions" }])
+	firestoreConnect([
+		{ collection: "users" },
+		{ collection: "questions", orderBy: ["timestamp", "desc"] },
+	])
 )(App);

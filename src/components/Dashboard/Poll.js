@@ -9,13 +9,16 @@ class Poll extends React.Component {
 		const {
 			author,
 			id,
-			optionOne,
-			optionTwo,
+			optionOneText,
+			optionTwoText,
+			optionOneVotes,
+			optionTwoVotes,
+
 			timestamp,
 			uid,
 		} = this.props.question;
 		const date = formatDate(timestamp);
-		const total_votes = optionOne.votes.length + optionTwo.votes.length;
+		const total_votes = optionOneVotes.length + optionTwoVotes.length;
 		console.log("__POLLS__", this.props.question);
 		return (
 			<div className="item-container">

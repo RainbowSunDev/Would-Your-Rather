@@ -4,13 +4,6 @@ export const GET_USERS = "GET_USERS";
 export const ADD_USERS = "ADD_USER";
 export const ADD_USERS_ERROR = "ADD_USER_ERROR";
 
-/* export default function receiveUsers(users) {
-	return {
-		type: GET_USERS,
-		users,
-	};
-} */
-
 export default function addNewUser(user) {
 	const formattedUser = formatUser(user);
 	return (dispatch, getState, { getFirebase, getFirestore }) => {

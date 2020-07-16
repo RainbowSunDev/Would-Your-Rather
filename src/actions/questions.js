@@ -42,3 +42,38 @@ export default function addNewQuestion(question) {
 			.catch((err) => dispatch({ type: CREATE_QUESTION_ERROR, err }));
 	};
 }
+export function vote(qid, voting, loggedInUser) {
+	return (dispatch, getState, { getFirebase, getFirestore }) => {
+		const firebase = getFirebase();
+		const firestore = getFirestore();
+		console.log("__ACTION__", qid, voting, loggedInUser);
+		const uid = loggedInUser;
+
+		let questionColl = firestore.collection("questions").doc(qid);
+
+		console.log(questionColl);
+		questionColl
+			.update(
+				voting === "optionTwo"
+					? { optionTwoVotes: firebase.firestore.FieldValue.arrayUnion(uid) }
+					: { optionOneVotes: firebase.firestore.FieldValue.arrayUnion(uid) }
+			)
+			.then(() => {
+				firestore
+					.collection("users")
+					.doc(uid)
+					.get()
+					.then((doc) => {
+						let answers = doc.data().answers;
+						answers[qid] = voting;
+						firestore.collection("users").doc(uid).update({ answers: answers });
+					});
+			})
+			.then(() => {
+				dispatch({ type: "VOTING_SUCCESS", qid, voting });
+			})
+			.catch((err) => {
+				dispatch({ type: "VOTING_FAILURE", err });
+			});
+	};
+}

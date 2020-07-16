@@ -19,7 +19,6 @@ class Dashboard extends React.Component {
 
 	render() {
 		let questions = this.props.questions;
-		//console.log("__DASHBOARD__", this.props.questions);
 		const { openPoll, selectedQuestion } = this.state;
 
 		if (questions === undefined) {

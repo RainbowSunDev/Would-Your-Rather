@@ -56,7 +56,7 @@ class NavBar extends React.Component {
 	}
 }
 const mapStateToProps = (state) => {
-	console.log(state);
+	console.log("__LOOGKING@THE_STATE___", state);
 	return {
 		isLoggedIn: !state.firebase.auth.isEmpty,
 		profile: state.firebase.profile,

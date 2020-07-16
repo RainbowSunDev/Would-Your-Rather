@@ -1,11 +1,8 @@
 .dashboard-container {
-    font-family: 'Roboto', sans-serif;
+    font-family: "Roboto", sans-serif;
     display: grid;
-    grid-template-columns: .8fr 1.3fr 2fr;
+    grid-template-columns: 0.8fr 1.3fr 2fr;
     color: white;
-
-
-
 }
 
 .dashboard-menu {
@@ -15,23 +12,19 @@
     display: flex;
     flex-direction: column;
     padding: 25px;
-
     width: 100%;
-    border-top-right-radius: 25px
+    border-top-right-radius: 25px;
 }
 
 .dashboard-menu h2 {
     padding-left: 15px;
-    font-family: 'Rubrik', sans-serif;
+    font-family: "Rubrik", sans-serif;
     font-weight: 300;
     font-size: 25px;
-
-
 }
 
 .dashboard-menu li {
-
-    font-family: 'Roboto', sans-serif;
+    font-family: "Roboto", sans-serif;
     font-weight: 600;
     font-size: 15px;
     letter-spacing: 1px;
@@ -39,28 +32,21 @@
     transition: all 0.2s ease 0s;
     cursor: pointer;
     margin-bottom: 30px;
-
-
 }
 
 .dashboard-menu li:hover {
     transform: translateX(10px);
     border-left: 4px solid white;
-
-
 }
 
 .dashboard-menu header {
     margin-bottom: 30px;
-
 }
 
 .add-new-poll {
-    font-family: 'Roboto', sans-serif;
-
+    font-family: "Roboto", sans-serif;
     font-weight: 500;
     font-size: 13px;
-
     text-transform: uppercase;
     letter-spacing: 1px;
     display: flex;
@@ -69,9 +55,7 @@
     padding: 8px 40px;
     margin-bottom: 40px;
     margin-top: 50px;
-
     border-radius: 45px;
-
     border: none;
     background-color: white;
     color: #241c69;
@@ -79,15 +63,13 @@
     box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.24);
     outline: none;
     transition: all 0.3s ease 0s;
-
 }
 
 .add-new-poll:hover {
-    background-color: #F83B4F;
+    background-color: #f83b4f;
     box-shadow: 0px 12px 20px #f83b4e62;
     color: #fff;
     transform: translateX(10px);
-
 }
 
 .add-new-poll div {
@@ -95,18 +77,11 @@
 }
 
 .questions-list {
-
     grid-column: 2/3;
-
     list-style-type: none;
-
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
-
-
-
     background-color: rgb(247, 248, 251);
-
     width: fit-content;
     margin-top: 40px;
     padding: 5px;
@@ -114,17 +89,11 @@
     flex-wrap: nowrap;
 }
 
-
 @keyframes example {
     0% {
-
-
         bottom: -50%;
     }
-
     100% {
-
-
         bottom: 0px;
     }
 }
@@ -132,7 +101,6 @@
 .poll-vote {
     grid-template-columns: 3/4;
     color: black;
-
     transition: all 0.3s ease 0s;
     position: relative;
     animation-name: example;
