@@ -1,5 +1,4 @@
 .item-container {
-
     display: flex;
     flex-direction: row;
     border-bottom: 2px solid rgba(191, 191, 191, 0.406);
@@ -8,9 +7,6 @@
     cursor: pointer;
     transition: all 0.3s ease 0s;
     color: rgba(26, 26, 26, 0.817);
-
-
-
 }
 
 .question-author-avatar {
@@ -23,11 +19,9 @@
 }
 
 .poll-container {
-
     display: flex;
     flex-direction: column;
     text-decoration: none;
-
     text-align: start;
     padding: 1em;
     font-family: "Rubik", sans-serif;
@@ -36,7 +30,6 @@
 }
 
 .item-container:hover {
-
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
     border-right: 2px solid rgba(191, 191, 191, 0.406);
@@ -45,10 +38,8 @@
 
 .author-name {
     color: rgba(26, 26, 26, 0.817);
-
     font-family: "Rubik", sans-serif;
     font-weight: 500;
-
 }
 
 .poll-date {

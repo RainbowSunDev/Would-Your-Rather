@@ -1,8 +1,10 @@
 .dashboard-container {
     font-family: "Roboto", sans-serif;
     display: grid;
-    grid-template-columns: 0.8fr 1.3fr 2fr;
+    grid-template-columns: 0.5fr 1.5fr 2fr;
     color: white;
+    width: 100vw;
+    height: 100vh;
 }
 
 .dashboard-menu {
@@ -12,7 +14,6 @@
     display: flex;
     flex-direction: column;
     padding: 25px;
-    width: 100%;
     border-top-right-radius: 25px;
 }
 
@@ -65,7 +66,7 @@
     transition: all 0.3s ease 0s;
 }
 
-.add-new-poll:hover {
+.add-new-poll:hover:enabled {
     background-color: #f83b4f;
     box-shadow: 0px 12px 20px #f83b4e62;
     color: #fff;
@@ -91,18 +92,18 @@
 
 @keyframes example {
     0% {
-        bottom: -50%;
+        right: -100%;
     }
     100% {
-        bottom: 0px;
+        right: 0%;
     }
 }
 
 .poll-vote {
     grid-template-columns: 3/4;
     color: black;
-    transition: all 0.3s ease 0s;
+    transition: all 0.6s ease 0s;
     position: relative;
     animation-name: example;
-    animation-duration: 1s;
+    animation-duration: 1.2s;
 }
