@@ -513,3 +513,58 @@ h1 {
   padding-bottom: 0;
   margin-bottom: 0;
 }
+
+/* SECTION LEADERBOARD */
+
+.leaderboard {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  margin-left: 60px;
+  height: 90vh;
+  background: url('./assets/leaderboard.jpeg') no-repeat;
+  background-size: 500px 500px;
+  background-position-x: right;
+  background-position-y: bottom;
+}
+
+.top-users {
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.top-users ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.avatar {
+  border-radius: 50%;
+  width: 40%;
+  z-index: 9;
+}
+
+.avatar-1 {
+  width: 100%;
+}
+
+.avatar-2, .avatar-3 {
+  width: 65%;
+}
+
+.laurel {
+  position: fixed;
+  left: 65px;
+  top: 245px;
+  width: 210px;
+  z-index: -1;
+}

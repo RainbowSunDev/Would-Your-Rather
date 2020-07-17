@@ -10,6 +10,7 @@ import NewQuestion from "./NewQuestion";
 import SignPage from "./SignPage";
 
 import Dashboard from "./Dashboard/Dashboard";
+import Leaderboard from "./Leaderboard";
 
 class App extends Component {
 	render() {
@@ -24,6 +25,13 @@ class App extends Component {
 						<div>
 							{uid === undefined && (
 								<Route path="/" exact component={HomePage} />
+							)}
+							{users !== undefined && (
+								<Route
+									path="/leaderboard"
+									exact
+									component={() => <Leaderboard users={users} />}
+								/>
 							)}
 							<Route path="/sign" component={SignPage} />
 							<Route path="/add" exact component={NewQuestion} />
