@@ -1,11 +1,13 @@
 import React from "react";
 import { connect } from "react-redux";
 import { NavLink } from "react-router-dom";
+import Collapsible from "react-collapsible";
+
 import { signOut } from "../actions/authAction";
 
 class NavBar extends React.Component {
 	render() {
-		const { isLoggedIn } = this.props;
+		const { isLoggedIn, profile } = this.props;
 		console.log("NAV", this.props);
 		return (
 			<nav className="menu">
@@ -23,7 +25,7 @@ class NavBar extends React.Component {
 					{isLoggedIn === true ? (
 						<React.Fragment>
 							<li className="menu__group">
-								<NavLink to="/new" exact className="menu__link">
+								<NavLink to="/add" exact className="menu__link">
 									New Poll
 								</NavLink>
 							</li>
@@ -33,14 +35,21 @@ class NavBar extends React.Component {
 								</NavLink>
 							</li>
 							<li className="menu__group">
-								<NavLink
-									to="/"
-									exact
-									className="menu__link"
-									onClick={this.props.signOut}
+								<Collapsible
+									className="menu__group"
+									trigger={`Hello, ${profile.fname}`}
+									triggerClassName="menu__link collapse"
+									openedClassName="menu__link collapse opened"
 								>
-									Logout
-								</NavLink>
+									<NavLink
+										to="/"
+										exact
+										className="menu__link"
+										onClick={this.props.signOut}
+									>
+										Logout
+									</NavLink>
+								</Collapsible>
 							</li>
 						</React.Fragment>
 					) : (

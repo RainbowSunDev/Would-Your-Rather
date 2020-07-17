@@ -502,3 +502,12 @@ h1 {
   background-position-y: -10px;
   background-position-x: 700px;
 }
+
+.collapse {
+  cursor: pointer;
+}
+
+.opened {
+  padding-bottom: 0;
+  margin-bottom: 0;
+}

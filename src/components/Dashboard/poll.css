@@ -47,3 +47,8 @@
     font-weight: 300;
     font-size: 13px;
 }
+
+.votes {
+    color: rgba(0, 0, 0, 0.7);
+    font-size: 13px;
+}

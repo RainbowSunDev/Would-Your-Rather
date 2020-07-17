@@ -1,7 +1,6 @@
 import React from "react";
 import { formatDate } from "../../apis/_DATA";
 
-import { connect } from "react-redux";
 import "./poll.css";
 
 class Poll extends React.Component {
@@ -27,11 +26,19 @@ class Poll extends React.Component {
 				<div className="poll-container">
 					<span className="author-name">{author}</span>
 					<span className="poll-date">{date}</span>
-					<span className="votes">voted {total_votes} users</span>
+					{total_votes !== 0 ? (
+						<span className="votes">
+							{total_votes}
+							{total_votes > 1 ? <span> users</span> : <span> user</span>} voted
+							for this poll
+						</span>
+					) : (
+						<span className="votes">become the first one to vote</span>
+					)}
 				</div>
 			</div>
 		);
 	}
 }
 
-export default connect()(Poll);
+export default Poll;

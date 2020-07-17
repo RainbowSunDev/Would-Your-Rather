@@ -13,7 +13,7 @@ import Dashboard from "./Dashboard/Dashboard";
 
 class App extends Component {
 	render() {
-		const { authError, questions, users } = this.props;
+		const { authError, questions, users, uid } = this.props;
 		console.log("___APP___", this.props);
 		return (
 			<div className="app">
@@ -24,12 +24,16 @@ class App extends Component {
 						<div>
 							<Route path="/" exact component={HomePage} />
 							<Route path="/sign" component={SignPage} />
-							<Route path="/new" exact component={NewQuestion} />
-							<Route
-								path="/dashboard"
-								exact
-								component={() => <Dashboard questions={questions} />}
-							/>
+							<Route path="/add" exact component={NewQuestion} />
+							{questions !== undefined && users !== undefined && (
+								<Route
+									path="/dashboard"
+									exact
+									component={() => (
+										<Dashboard questions={questions} authedUser={users[uid]} />
+									)}
+								/>
+							)}
 						</div>
 					</React.Fragment>
 				</Router>
@@ -39,7 +43,9 @@ class App extends Component {
 }
 
 function mapStateToProps(state) {
+	console.log(state);
 	return {
+		uid: state.firebase.auth.uid,
 		users: state.firestore.data.users,
 		authError: state.authUser.authError,
 		questions: state.firestore.data.questions,

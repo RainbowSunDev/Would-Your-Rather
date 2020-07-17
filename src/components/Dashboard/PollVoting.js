@@ -15,7 +15,6 @@ class PollVoting extends Component {
 		this.state = {
 			optionOneChecked: false,
 			optionTwoChecked: false,
-			showResult: false,
 		};
 	}
 	toggleOption1Checked = () => {
@@ -43,12 +42,6 @@ class PollVoting extends Component {
 		}
 
 		this.props.vote(id, option, authedUid);
-	};
-	handleShowResult = (e) => {
-		e.preventDefault();
-		this.setState((prevState) => {
-			return { showResult: !prevState.showResult };
-		});
 	};
 
 	unansweredPolls(
@@ -136,7 +129,7 @@ class PollVoting extends Component {
 			optionTwoVotes,
 		} = this.props.selectedQuestion;
 		const { authedUid, userAnswers } = this.props;
-		const { optionOneChecked, optionTwoChecked, showResult } = this.state;
+		const { optionOneChecked, optionTwoChecked } = this.state;
 
 		console.log(this.props);
 		const answered = Object.keys(userAnswers).includes(id)
