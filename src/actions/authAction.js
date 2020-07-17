@@ -1,4 +1,5 @@
 let defaultAvatars = ["https://i.ibb.co/8cWd0BC/avatar6.jpg"];
+
 export const signIn = (credentials) => {
 	return (dispatch, getState, { getFirebase }) => {
 		const firebase = getFirebase();

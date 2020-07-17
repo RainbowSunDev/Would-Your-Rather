@@ -25,7 +25,6 @@ const store = createStore(
 		reduxFirestore(fbConfig)
 	)
 );
-console.log(store.getState());
 store.firebaseAuthIsReady.then(() => {
 	ReactDOM.render(
 		<Provider store={store}>

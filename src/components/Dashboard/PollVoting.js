@@ -29,7 +29,6 @@ class PollVoting extends Component {
 	};
 	handleVoting = (e) => {
 		e.preventDefault();
-		console.log("__HANDLE__VOTING___", this.props);
 		const { optionOneChecked } = this.state;
 		const { id } = this.props.selectedQuestion;
 		const { authedUid } = this.props;
@@ -51,8 +50,6 @@ class PollVoting extends Component {
 		optionTwoText,
 		answered
 	) {
-		console.log(answered);
-
 		return answered === false ? (
 			<form className="form">
 				<div className="inputGroup">
@@ -128,10 +125,9 @@ class PollVoting extends Component {
 			optionOneVotes,
 			optionTwoVotes,
 		} = this.props.selectedQuestion;
-		const { authedUid, userAnswers } = this.props;
+		const { userAnswers } = this.props;
 		const { optionOneChecked, optionTwoChecked } = this.state;
 
-		console.log(this.props);
 		const answered = Object.keys(userAnswers).includes(id)
 			? userAnswers[id]
 			: false;
@@ -188,7 +184,6 @@ class PollVoting extends Component {
 	}
 }
 const mapStateToProps = (state) => {
-	console.log("__THE STATE OF THE VOTING CMP", state);
 	const uid = state.firebase.auth.uid;
 	return {
 		authedUid: uid,

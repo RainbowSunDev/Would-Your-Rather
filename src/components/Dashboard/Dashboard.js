@@ -23,7 +23,6 @@ class Dashboard extends React.Component {
 	}
 	openPollHandler = (question) => {
 		this.setState({ openPoll: true, selectedQuestion: question });
-		console.log(this.state);
 	};
 	onClosePoll = () => {
 		this.setState({ openPoll: false });
@@ -34,7 +33,6 @@ class Dashboard extends React.Component {
 	handleWantedPolls = (target) => {
 		const currentUserAnswers = Object.keys(this.props.authedUser.answers);
 		const currentUserQuestions = this.props.authedUser.questions;
-		console.log(currentUserAnswers);
 		let wantedQuestions;
 		if (target === "answered") {
 			wantedQuestions = this.state.questions.filter((question) =>

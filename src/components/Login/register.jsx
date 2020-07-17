@@ -28,14 +28,13 @@ class Register extends React.Component {
 		this.setState({ password: e.target.value });
 	};
 	handleSubmit = (e) => {
-		console.log(this.state);
 		this.props.signUp(this.state);
 
 		this.setState({ email: "", password: "", username: "", fname: "" });
 	};
 	render() {
 		const { email, password, fname, username } = this.state;
-		console.log(this.props);
+
 		return (
 			<div className="base-container" ref={this.props.containerRef}>
 				<div className="header">Register</div>

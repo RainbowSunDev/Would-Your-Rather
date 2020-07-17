@@ -13,7 +13,6 @@ class NewQuestion extends Component {
 		this.setState(() => ({ optionOne: optionOne }));
 	};
 	handleOptionTwoChange = (event) => {
-		console.log(this.state);
 		const optionTwo = event.target.value;
 		this.setState({ optionTwo: optionTwo });
 	};

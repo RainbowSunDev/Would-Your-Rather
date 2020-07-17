@@ -50,7 +50,6 @@ class App extends Component {
 }
 
 function mapStateToProps(state) {
-	console.log(state);
 	return {
 		uid: state.firebase.auth.uid,
 		users: state.firestore.data.users,

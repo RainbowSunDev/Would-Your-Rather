@@ -22,7 +22,6 @@ class Login extends React.Component {
 		this.setState({ password: e.target.value });
 	};
 	handleSubmit = (e) => {
-		console.log("logging in ", this.state);
 		this.props.signIn(this.state);
 		setTimeout(
 			() => this.setState({ email: "", password: "", toHome: true }),

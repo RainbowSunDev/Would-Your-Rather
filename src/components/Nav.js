@@ -8,7 +8,7 @@ import { signOut } from "../actions/authAction";
 class NavBar extends React.Component {
 	render() {
 		const { isLoggedIn, profile } = this.props;
-		console.log("NAV", this.props);
+
 		return (
 			<nav className="menu">
 				<ul className="menu__list">
@@ -21,7 +21,7 @@ class NavBar extends React.Component {
 					{isLoggedIn === true ? (
 						<React.Fragment>
 							<li className="menu__group">
-								<NavLink to="/dashboard" exact className="menu__link">
+								<NavLink to="/" exact className="menu__link">
 									Dashboard
 								</NavLink>
 							</li>
@@ -73,7 +73,6 @@ class NavBar extends React.Component {
 	}
 }
 const mapStateToProps = (state) => {
-	console.log("__LOOGKING@THE_STATE___", state);
 	return {
 		isLoggedIn: !state.firebase.auth.isEmpty,
 		profile: state.firebase.profile,
