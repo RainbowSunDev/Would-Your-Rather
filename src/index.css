@@ -438,10 +438,11 @@ h1 {
 
 .menu__link {
   padding: 2rem 1.5rem;
-  font-weight: 700;
+  font-weight: 500;
   color: #241c69;
   text-decoration: none;
   text-transform: uppercase;
+  font-size: 16px;
 }
 
 /* states */
@@ -508,6 +509,7 @@ h1 {
 }
 
 .opened {
+  font-weight: 500;
   padding-bottom: 0;
   margin-bottom: 0;
 }

@@ -22,18 +22,25 @@ class App extends Component {
 						<NavBar authError={authError} />
 
 						<div>
-							<Route path="/" exact component={HomePage} />
+							{uid === undefined && (
+								<Route path="/" exact component={HomePage} />
+							)}
 							<Route path="/sign" component={SignPage} />
 							<Route path="/add" exact component={NewQuestion} />
-							{questions !== undefined && users !== undefined && (
-								<Route
-									path="/dashboard"
-									exact
-									component={() => (
-										<Dashboard questions={questions} authedUser={users[uid]} />
-									)}
-								/>
-							)}
+							{questions !== undefined &&
+								users !== undefined &&
+								uid !== undefined && (
+									<Route
+										path="/"
+										exact
+										component={() => (
+											<Dashboard
+												questions={questions}
+												authedUser={users[uid]}
+											/>
+										)}
+									/>
+								)}
 						</div>
 					</React.Fragment>
 				</Router>

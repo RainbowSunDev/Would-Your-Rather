@@ -17,13 +17,14 @@ class NavBar extends React.Component {
 							WYR?
 						</NavLink>
 					</li>
-					<li className="menu__group">
-						<NavLink to="/" exact className="menu__link">
-							Home
-						</NavLink>
-					</li>
+
 					{isLoggedIn === true ? (
 						<React.Fragment>
+							<li className="menu__group">
+								<NavLink to="/dashboard" exact className="menu__link">
+									Dashboard
+								</NavLink>
+							</li>
 							<li className="menu__group">
 								<NavLink to="/add" exact className="menu__link">
 									New Poll
@@ -53,11 +54,18 @@ class NavBar extends React.Component {
 							</li>
 						</React.Fragment>
 					) : (
-						<li className="menu__group">
-							<NavLink to="/sign" exact className="menu__link">
-								Join us!
-							</NavLink>
-						</li>
+						<React.Fragment>
+							<li className="menu__group">
+								<NavLink to="/about" exact className="menu__link">
+									About Us
+								</NavLink>
+							</li>
+							<li className="menu__group">
+								<NavLink to="/sign" exact className="menu__link">
+									Join us!
+								</NavLink>
+							</li>
+						</React.Fragment>
 					)}
 				</ul>
 			</nav>

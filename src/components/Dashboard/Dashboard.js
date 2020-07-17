@@ -49,7 +49,7 @@ class Dashboard extends React.Component {
 				currentUserQuestions.includes(question.id)
 			);
 		}
-		this.setState({ wantedQuestions: wantedQuestions });
+		this.setState({ openPoll: false, wantedQuestions: wantedQuestions });
 	};
 
 	render() {
