@@ -33,7 +33,7 @@ class PollVoting extends Component {
 		console.log("__HANDLE__VOTING___", this.props);
 		const { optionOneChecked } = this.state;
 		const { id } = this.props.selectedQuestion;
-		const { loggedInUser } = this.props;
+		const { authedUid } = this.props;
 
 		let option;
 		if (optionOneChecked === true) {
@@ -42,7 +42,7 @@ class PollVoting extends Component {
 			option = "optionTwo";
 		}
 
-		this.props.vote(id, option, loggedInUser);
+		this.props.vote(id, option, authedUid);
 	};
 	handleShowResult = (e) => {
 		e.preventDefault();
@@ -172,7 +172,6 @@ class PollVoting extends Component {
 						trigger="Show Results"
 						triggerWhenOpen="Hide Results"
 						triggerTagName="button"
-						triggerDisabled={answered === false}
 					>
 						<Pie
 							width={"400px"}
@@ -205,8 +204,7 @@ const mapStateToProps = (state) => {
 };
 const mapDispatchToProps = (dispatch) => {
 	return {
-		vote: (qid, voting, loggedInUser) =>
-			dispatch(vote(qid, voting, loggedInUser)),
+		vote: (qid, voting, authedUid) => dispatch(vote(qid, voting, authedUid)),
 	};
 };
 

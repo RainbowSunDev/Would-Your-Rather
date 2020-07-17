@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { FaPoll } from "react-icons/fa";
+import { RiCloseLine } from "react-icons/ri";
 
 import Poll from "./Poll";
 import "./dashboard.css";
@@ -15,6 +16,9 @@ class Dashboard extends React.Component {
 	openPollHandler = (question) => {
 		this.setState({ openPoll: true, selectedQuestion: question });
 		console.log(this.state);
+	};
+	onClosePoll = () => {
+		this.setState({ openPoll: false });
 	};
 
 	render() {
@@ -51,8 +55,10 @@ class Dashboard extends React.Component {
 								</li>
 							))}
 						</ul>
+
 						{openPoll && (
 							<div className="poll-vote">
+								<RiCloseLine className={"icon"} onClick={this.onClosePoll} />
 								<PollVoting selectedQuestion={selectedQuestion} />
 							</div>
 						)}

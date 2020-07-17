@@ -1,7 +1,7 @@
 .dashboard-container {
     font-family: "Roboto", sans-serif;
     display: grid;
-    grid-template-columns: 0.5fr 1.2fr 2fr;
+    grid-template-columns: 0.5fr 1fr 2fr;
     color: white;
     width: 100vw;
     height: 100vh;
@@ -106,4 +106,13 @@
     position: relative;
     animation-name: example;
     animation-duration: 1.2s;
+}
+
+.icon {
+    color: white;
+    font-size: 25px;
+    position: relative;
+    bottom: -135px;
+    right: -65%;
+    cursor: pointer;
 }
