@@ -1,4 +1,7 @@
 import React, { Component } from "react";
+import crown from "../assets/crown.svg";
+import { MdStar } from "react-icons/md";
+
 class Leaderboard extends Component {
 	constructor(props) {
 		super(props);
@@ -25,66 +28,70 @@ class Leaderboard extends Component {
 		const { users } = this.props;
 		if (!loaded) return null;
 		return (
-			<div className="leaderboard font-rubrik">
-				<h2>Leaderboard</h2>
-				<ul className="top-users">
-					<ul className="top-2 ">
-						<li>✨ {users[topUsers[1]].username} ✨</li>
-						<li>
-							<img
-								src={users[topUsers[1]].avatarURL}
-								alt="avatar"
-								className="avatar avatar-2"
-							/>
-						</li>
-						<li>{users[topUsers[1]].fname}</li>
-						<li>
-							Score :{" "}
-							{users[topUsers[1]].questions.length +
-								Object.keys(users[topUsers[1]].answers).length}
-						</li>
-						<span style={{ fontSize: "40px" }}>🥈</span>
-					</ul>
-					<ul className="top-1">
-						<li>✨ {users[topUsers[0]].username} ✨</li>
-						<li>
-							<img
-								src={users[topUsers[0]].avatarURL}
-								alt="avatar"
-								className="avatar avatar-1"
-							/>
-						</li>
-						<li>{users[topUsers[0]].fname}</li>
-						<li>
-							Score :{" "}
-							{users[topUsers[0]].questions.length +
-								Object.keys(users[topUsers[0]].answers).length}
-						</li>
-						<span style={{ fontSize: "40px" }}>🥇</span>
-					</ul>
-					<ul className="top-3">
-						<li>✨ {users[topUsers[2]].username} ✨</li>
-						<li>
-							<img
-								src={users[topUsers[2]].avatarURL}
-								alt="avatar"
-								className="avatar avatar-3"
-							/>
-						</li>
-						<li>{users[topUsers[2]].fname}</li>
-						<li>
-							Score :{" "}
-							{users[topUsers[2]].questions.length +
-								Object.keys(users[topUsers[2]].answers).length}
-						</li>
-						<span style={{ fontSize: "40px" }}>🥉</span>
-					</ul>
-				</ul>
-				<ul>
-					{topUsers.map((user) => (
-						<li key={user}>{users[user].fname}</li>
+			<div className="leaderboard">
+				<ul className="users-list">
+					{topUsers.map((user, index) => (
+						<div className="signle-user">
+							<header>
+								<header className="index">#{index + 1}</header>
+								<img
+									src={users[user].avatarURL}
+									alt={"avatar"}
+									className="avatars"
+								/>
+								<div className="user-info">
+									<li key={user}>{users[user].fname}</li>
+									<li
+										className="user-name"
+										style={{
+											fontSize: "1.2vw",
+											color: "#222",
+											fontWeight: "300",
+										}}
+									>
+										@{users[user].username}
+									</li>
+								</div>
+							</header>
+							<div
+								className="score"
+								style={{
+									fontSize: "1.6vw",
+									color: "#222e",
+									fontFamily: "Roboto",
+								}}
+							>
+								<MdStar className="star" />
+								<div>
+									{" "}
+									{users[user].questions.length +
+										Object.keys(users[user].answers).length}
+								</div>
+							</div>
+						</div>
 					))}
 				</ul>
+				<div className="top-user">
+					<header>
+						TOP <span>USER</span>
+					</header>
+					<img src={crown} alt={"crown"} className="crown" />
+					<img
+						src={users[topUsers[0]].avatarURL}
+						alt="avatar"
+						className="avatar"
+					/>
+					<div className="fname"> {users[topUsers[0]].fname}</div>
+					<div className="user-name"> @{users[topUsers[0]].username}</div>
+					<div className="score">
+						<MdStar className="star" />
+						<div>
+							{" "}
+							{users[topUsers[0]].questions.length +
+								Object.keys(users[topUsers[0]].answers).length}
+						</div>
+					</div>
+				</div>
 			</div>
 		);
 	}

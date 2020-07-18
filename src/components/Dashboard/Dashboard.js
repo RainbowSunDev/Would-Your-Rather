@@ -57,7 +57,7 @@ class Dashboard extends React.Component {
 				<div className="dashboard-container">
 					<ul className="dashboard-menu">
 						<h2>Dashboard</h2>
-						<NavLink to="/new" className="add-new-poll">
+						<NavLink to="/add" className="add-new-poll">
 							<FaPoll size="28px" />
 							<div>New Poll</div>
 						</NavLink>

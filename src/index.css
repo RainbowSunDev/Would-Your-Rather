@@ -517,54 +517,132 @@ h1 {
 /* SECTION LEADERBOARD */
 
 .leaderboard {
+  margin: 1vh 8vw;
+  padding: 4vh 6vw;
+  display: grid;
+  grid-template-columns: 1fr .7fr;
+  font-family: 'Rubrik', 'Roboto', sans-serif;
+  color: white;
+  font-weight: 500;
+}
+
+.top-user {
+  grid-column: 2/3;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
-  margin-left: 60px;
-  height: 90vh;
-  background: url('./assets/leaderboard.jpeg') no-repeat;
-  background-size: 500px 500px;
-  background-position-x: right;
-  background-position-y: bottom;
-}
-
-.top-users {
-  display: flex;
-  flex-direction: row;
-  list-style-type: none;
-}
-
-ul {
-  list-style-type: none;
-}
-
-.top-users ul {
-  display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  text-align: center;
+  background-color: #222;
+  border-radius: 2px;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.7);
 }
 
 .avatar {
   border-radius: 50%;
   width: 40%;
-  z-index: 9;
+  border: 3.5px solid rgb(250, 197, 91);
+  margin-top: -20px;
 }
 
-.avatar-1 {
-  width: 100%;
+.crown {
+  width: 35%;
+  margin-right: 70px;
+  margin-bottom: 5px;
 }
 
-.avatar-2, .avatar-3 {
-  width: 65%;
+.top-user header {
+  font-size: 2vw;
+  font-weight: 500;
 }
 
-.laurel {
-  position: fixed;
-  left: 65px;
-  top: 245px;
-  width: 210px;
-  z-index: -1;
+.top-user header span {
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.63);
+}
+
+.users-list {
+  grid-column: 1/2;
+  list-style-type: none;
+  padding: 0vw 2vw;
+  background-color: rgb(247, 248, 251);
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.4);
+  color: #222;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+.fname {
+  font-size: 1.3vw;
+  padding: 10px 0px 0px 0px;
+}
+
+.user-name {
+  font-size: 1.2vw;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.63);
+  padding-bottom: 1.2vh;
+}
+
+.score {
+  display: flex;
+  flex-direction: row;
+  padding-top: 1.2vh;
+  font-weight: 400;
+  font-size: 2.5vw;
+}
+
+.star {
+  color: rgb(250, 197, 91);
+  border-radius: 50%;
+  border: 1px solid gold;
+  padding: 2px;
+  margin-right: 10px;
+  transition: all 1s ease 0s;
+}
+
+.star:hover {
+  transform: rotate(360deg);
+}
+
+.signle-user {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-left: 1.2vw;
+  margin-top: 4vh;
+  border-bottom: 1px solid rgba(191, 191, 191, 0.406);
+  transition: all .3s ease 0s;
+  cursor: pointer;
+}
+
+.signle-user:hover {
+  transform: scale(1.05);
+}
+
+.signle-user header {
+  font-weight: 500;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 3vh;
+  font-size: 1.4vw;
+}
+
+.signle-user header header {
+  margin-right: 10px;
+}
+
+.avatars {
+  border-radius: 50%;
+  width: 5vw;
+  margin-right: 10px;
+}
+
+.index {
+  font-weight: 300;
+  text-align: center;
+  margin-top: auto;
+  padding-right: 10px;
+  opacity: 0.7;
 }
