@@ -70,7 +70,6 @@ class Dashboard extends React.Component {
 						<li onClick={() => this.handleWantedPolls("unanswered")}>
 							Unanswered Polls
 						</li>
-						<li> Favorites</li>
 					</ul>
 					<ul className="questions-list">
 						{wantedQuestions.map((question) => (

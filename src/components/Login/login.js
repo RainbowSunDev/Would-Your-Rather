@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import loginImg from "../../assets/login.svg";
 
 import { signIn } from "../../actions/authAction";
-import { Redirect } from "react-router-dom";
+import { Redirect, withRouter } from "react-router-dom";
 
 class Login extends React.Component {
 	constructor(props) {
@@ -12,7 +12,6 @@ class Login extends React.Component {
 		this.state = {
 			email: "",
 			password: "",
-			toHome: false,
 		};
 	}
 	handleEmail = (e) => {
@@ -23,16 +22,14 @@ class Login extends React.Component {
 	};
 	handleSubmit = (e) => {
 		this.props.signIn(this.state);
-		setTimeout(
-			() => this.setState({ email: "", password: "", toHome: true }),
-			1000
-		);
+		setTimeout(() => {
+			this.setState({ email: "", password: "" });
+			this.props.history.push("/");
+		}, 1000);
 	};
 	render() {
 		const { email, password, toHome } = this.state;
-		if (toHome === true) {
-			return <Redirect to="/" />;
-		}
+
 		return (
 			<div className="base-container" ref={this.props.containerRef}>
 				<div className="header">Login</div>
@@ -79,4 +76,5 @@ const mapDispatchToProps = (dispatch) => {
 		signIn: (creds) => dispatch(signIn(creds)),
 	};
 };
-export default connect(null, mapDispatchToProps)(Login);
+const loginWithRouter = withRouter(Login);
+export default connect(null, mapDispatchToProps)(loginWithRouter);

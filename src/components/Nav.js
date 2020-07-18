@@ -8,7 +8,6 @@ import { signOut } from "../actions/authAction";
 class NavBar extends React.Component {
 	render() {
 		const { isLoggedIn, profile } = this.props;
-
 		return (
 			<nav className="menu">
 				<ul className="menu__list">

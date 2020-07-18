@@ -15,15 +15,16 @@ import Leaderboard from "./Leaderboard";
 class App extends Component {
 	render() {
 		const { authError, questions, users, uid } = this.props;
-		console.log("___APP___", this.props);
 		return (
 			<div className="app">
 				<Router>
 					<React.Fragment>
 						<NavBar authError={authError} />
-
+						<Route path="/sign" exact component={SignPage} />
 						<div>
-							{uid === undefined && <Route path="/" component={HomePage} />}
+							{uid === undefined && (
+								<Route path="/" exact component={HomePage} />
+							)}
 							{users !== undefined && (
 								<Route
 									path="/leaderboard"
@@ -31,7 +32,7 @@ class App extends Component {
 									component={() => <Leaderboard users={users} uid={uid} />}
 								/>
 							)}
-							<Route path="/sign" component={SignPage} />
+
 							<Route
 								path="/add"
 								exact

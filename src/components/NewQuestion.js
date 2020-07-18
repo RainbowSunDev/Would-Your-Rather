@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { Redirect } from "react-router-dom";
+import { Redirect, withRouter } from "react-router-dom";
 import addNewQuestion from "../actions/questions";
 
 class NewQuestion extends Component {
@@ -30,20 +30,19 @@ class NewQuestion extends Component {
 			uid: uid,
 		});
 		setInterval(() => {
-			this.setState(() => ({
-				optionOne: "",
-				optionTwo: "",
-			}));
+			this.setState({ optionOne: "", optionTwo: "" });
 			this.props.history.push("/");
 		}, 1000);
 	};
 	render() {
 		const { optionOne, optionTwo } = this.state;
+		console.log(this.state);
 		const { uid } = this.props;
 		if (uid === undefined) {
 			alert("You must login first to access this page");
 			return <Redirect to="sign" />;
 		}
+
 		return (
 			<div className="col page-bkg">
 				<h1 className="form-title">Would You Rather..</h1>
@@ -100,5 +99,6 @@ const mapDispatchToProps = (dispatch) => {
 		addNewQuestion: (question) => dispatch(addNewQuestion(question)),
 	};
 };
+const NQ = withRouter(NewQuestion);
 
-export default connect(mapStateToProps, mapDispatchToProps)(NewQuestion);
+export default connect(mapStateToProps, mapDispatchToProps)(NQ);
