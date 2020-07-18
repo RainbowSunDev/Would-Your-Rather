@@ -23,9 +23,7 @@ class App extends Component {
 						<NavBar authError={authError} />
 
 						<div>
-							{uid === undefined && (
-								<Route path="/" exact component={HomePage} />
-							)}
+							{uid === undefined && <Route path="/" component={HomePage} />}
 							{users !== undefined && (
 								<Route
 									path="/leaderboard"
