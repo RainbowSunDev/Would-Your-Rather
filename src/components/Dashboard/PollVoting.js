@@ -18,6 +18,7 @@ class PollVoting extends Component {
 		};
 	}
 	toggleOption1Checked = () => {
+		console.log("a7a");
 		this.setState((prevState) => {
 			return { optionOneChecked: !prevState.optionOneChecked };
 		});
@@ -54,10 +55,11 @@ class PollVoting extends Component {
 			<form className="form">
 				<div className="inputGroup">
 					<input
+						style={{ cursor: "pointer" }}
 						id="option1"
 						name="option1"
 						type="checkbox"
-						onChange={this.toggleOption1Checked}
+						onClick={this.toggleOption1Checked}
 						disabled={optionTwoChecked === true}
 					/>
 					<label htmlFor="option1">{optionOneText}</label>

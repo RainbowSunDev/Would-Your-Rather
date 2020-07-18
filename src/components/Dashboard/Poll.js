@@ -7,18 +7,17 @@ class Poll extends React.Component {
 	render() {
 		const {
 			author,
-
 			optionOneVotes,
 			optionTwoVotes,
-
 			timestamp,
 		} = this.props.question;
+		const { avatarURL } = this.props;
 		const date = formatDate(timestamp);
 		const total_votes = optionOneVotes.length + optionTwoVotes.length;
 
 		return (
 			<div className="item-container">
-				<img src="/avatar1.jpg" alt="img" className="question-author-avatar" />
+				<img src={avatarURL} alt="img" className="question-author-avatar" />
 
 				<div className="poll-container">
 					<span className="author-name">{author}</span>

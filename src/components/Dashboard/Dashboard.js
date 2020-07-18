@@ -52,6 +52,8 @@ class Dashboard extends React.Component {
 
 	render() {
 		const { openPoll, selectedQuestion, wantedQuestions } = this.state;
+		const { users } = this.props;
+		console.log(this.state);
 		return (
 			<div className="dashboard">
 				<div className="dashboard-container">
@@ -76,7 +78,10 @@ class Dashboard extends React.Component {
 								key={question.id}
 								onClick={() => this.openPollHandler(question)}
 							>
-								<Poll question={question} />
+								<Poll
+									question={question}
+									avatarURL={users[question.uid].avatarURL}
+								/>
 							</li>
 						))}
 					</ul>

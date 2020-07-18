@@ -66,11 +66,11 @@
     transition: all 0.3s ease 0s;
 }
 
-.add-new-poll:hover:enabled {
+.add-new-poll:hover {
     background-color: #f83b4f;
     box-shadow: 0px 12px 20px #f83b4e62;
     color: #fff;
-    transform: translateX(10px);
+    transform: translateY(-10px);
 }
 
 .add-new-poll div {

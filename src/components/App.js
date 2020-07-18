@@ -45,6 +45,7 @@ class App extends Component {
 											<Dashboard
 												questions={questions}
 												authedUser={users[uid]}
+												users={users}
 											/>
 										)}
 									/>

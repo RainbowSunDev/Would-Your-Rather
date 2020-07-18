@@ -535,6 +535,7 @@ h1 {
   background-color: #222;
   border-radius: 2px;
   box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.7);
+  padding: 6vmax;
 }
 
 .avatar {
@@ -612,7 +613,6 @@ h1 {
   margin-top: 4vh;
   border-bottom: 1px solid rgba(191, 191, 191, 0.406);
   transition: all .3s ease 0s;
-  cursor: pointer;
 }
 
 .signle-user:hover {

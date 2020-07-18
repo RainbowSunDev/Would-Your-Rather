@@ -28,14 +28,13 @@ class NewQuestion extends Component {
 			optionTwoText: optionTwo,
 			uid: uid,
 		});
-		setInterval(
-			() =>
-				this.setState(() => ({
-					optionOne: "",
-					optionTwo: "",
-				})),
-			1000
-		);
+		setInterval(() => {
+			this.setState(() => ({
+				optionOne: "",
+				optionTwo: "",
+			}));
+			this.props.history.push("/");
+		}, 1000);
 	};
 	render() {
 		const { optionOne, optionTwo } = this.state;
