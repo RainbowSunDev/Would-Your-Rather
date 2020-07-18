@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import crown from "../assets/crown.svg";
 import { MdStar } from "react-icons/md";
+import { Redirect } from "react-router-dom";
 
 class Leaderboard extends Component {
 	constructor(props) {
@@ -25,8 +26,12 @@ class Leaderboard extends Component {
 	}
 	render() {
 		const { topUsers, loaded } = this.state;
-		const { users } = this.props;
+		const { users, uid } = this.props;
 		if (!loaded) return null;
+		if (uid === undefined) {
+			alert("You must login first to access this page");
+			return <Redirect to="sign" />;
+		}
 		return (
 			<div className="leaderboard">
 				<ul className="users-list">
@@ -56,11 +61,19 @@ class Leaderboard extends Component {
 							<div
 								className="score"
 								style={{
-									fontSize: "1.6vw",
+									fontSize: "1.8vw",
 									color: "#222e",
 									fontFamily: "Roboto",
 								}}
 							>
+								<div className="answered">
+									<span style={{ marginBottom: "10px" }}>ANSWERED</span>
+									<span>{Object.keys(users[user].answers).length}</span>
+								</div>
+								<div className="answered">
+									<span style={{ marginBottom: "10px" }}>CREATED</span>
+									<span>{users[user].questions.length}</span>
+								</div>
 								<MdStar className="star" />
 								<div>
 									{" "}
@@ -84,12 +97,9 @@ class Leaderboard extends Component {
 					<div className="fname"> {users[topUsers[0]].fname}</div>
 					<div className="user-name"> @{users[topUsers[0]].username}</div>
 					<div className="score">
-						<MdStar className="star" />
-						<div>
-							{" "}
-							{users[topUsers[0]].questions.length +
-								Object.keys(users[topUsers[0]].answers).length}
-						</div>
+						<MdStar className="star" />{" "}
+						{users[topUsers[0]].questions.length +
+							Object.keys(users[topUsers[0]].answers).length}
 					</div>
 				</div>
 			</div>

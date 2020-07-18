@@ -4,8 +4,6 @@ import { firestoreConnect } from "react-redux-firebase";
 import { Pie } from "react-chartjs-2";
 import Collapsible from "react-collapsible";
 
-import "./poll_vote.scss";
-import "./poll_vote.css";
 import { connect } from "react-redux";
 import { compose } from "redux";
 

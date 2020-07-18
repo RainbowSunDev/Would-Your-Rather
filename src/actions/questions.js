@@ -1,4 +1,4 @@
-import { formatQuestion } from "../apis/_DATA";
+import { formatQuestion } from "../utlis/_DATA";
 
 export const GET_QUESTIONS = "GET_QUESTIONS";
 export const ADD_QUESTION = "ADD_QUESTION";

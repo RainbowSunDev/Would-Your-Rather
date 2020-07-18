@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import { Redirect } from "react-router-dom";
 import addNewQuestion from "../actions/questions";
 
 class NewQuestion extends Component {
@@ -38,7 +39,11 @@ class NewQuestion extends Component {
 	};
 	render() {
 		const { optionOne, optionTwo } = this.state;
-
+		const { uid } = this.props;
+		if (uid === undefined) {
+			alert("You must login first to access this page");
+			return <Redirect to="sign" />;
+		}
 		return (
 			<div className="col page-bkg">
 				<h1 className="form-title">Would You Rather..</h1>

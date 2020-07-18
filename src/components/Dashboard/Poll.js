@@ -1,7 +1,5 @@
 import React from "react";
-import { formatDate } from "../../apis/_DATA";
-
-import "./poll.css";
+import { formatDate } from "../../utlis/_DATA";
 
 class Poll extends React.Component {
 	render() {

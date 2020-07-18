@@ -4,7 +4,7 @@ import { FaPoll } from "react-icons/fa";
 import { RiCloseLine } from "react-icons/ri";
 
 import Poll from "./Poll";
-import "./dashboard.css";
+
 import { NavLink } from "react-router-dom";
 import PollVoting from "./PollVoting";
 

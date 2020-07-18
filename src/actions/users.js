@@ -1,4 +1,4 @@
-import { formatUser } from "../apis/_DATA";
+import { formatUser } from "../utlis/_DATA";
 
 export const GET_USERS = "GET_USERS";
 export const ADD_USERS = "ADD_USER";

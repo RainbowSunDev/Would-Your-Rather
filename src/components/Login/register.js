@@ -3,7 +3,6 @@ import React from "react";
 import loginImg from "../../assets/login.svg";
 import { connect } from "react-redux";
 import { signUp } from "../../actions/authAction";
-import "./formstyle.scss";
 
 class Register extends React.Component {
 	constructor(props) {

@@ -30,11 +30,15 @@ class App extends Component {
 								<Route
 									path="/leaderboard"
 									exact
-									component={() => <Leaderboard users={users} />}
+									component={() => <Leaderboard users={users} uid={uid} />}
 								/>
 							)}
 							<Route path="/sign" component={SignPage} />
-							<Route path="/add" exact component={NewQuestion} />
+							<Route
+								path="/add"
+								exact
+								component={() => <NewQuestion uid={uid} />}
+							/>
 							{questions !== undefined &&
 								users !== undefined &&
 								uid !== undefined && (
@@ -46,6 +50,7 @@ class App extends Component {
 												questions={questions}
 												authedUser={users[uid]}
 												users={users}
+												uid={uid}
 											/>
 										)}
 									/>

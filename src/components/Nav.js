@@ -56,8 +56,8 @@ class NavBar extends React.Component {
 					) : (
 						<React.Fragment>
 							<li className="menu__group">
-								<NavLink to="/about" exact className="menu__link">
-									About Us
+								<NavLink to="/" exact className="menu__link">
+									Home
 								</NavLink>
 							</li>
 							<li className="menu__group">

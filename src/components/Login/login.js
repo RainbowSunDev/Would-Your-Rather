@@ -2,7 +2,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import loginImg from "../../assets/login.svg";
-import "./formstyle.scss";
+
 import { signIn } from "../../actions/authAction";
 import { Redirect } from "react-router-dom";
 
