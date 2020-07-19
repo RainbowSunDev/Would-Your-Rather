@@ -5,8 +5,7 @@ import { RiCloseLine } from "react-icons/ri";
 
 import Poll from "./Poll";
 
-import { NavLink } from "react-router-dom";
-import PollVoting from "./PollVoting";
+import { NavLink, withRouter } from "react-router-dom";
 
 class Dashboard extends React.Component {
 	constructor(props) {
@@ -21,7 +20,9 @@ class Dashboard extends React.Component {
 	componentDidMount() {
 		this.handleWantedPolls("unanswered");
 	}
-	openPollHandler = (question) => {
+	openPollHandler = (e, question) => {
+		console.log(question);
+		this.props.history.push(`/questions/${question.id}`);
 		this.setState({ openPoll: true, selectedQuestion: question });
 	};
 	onClosePoll = () => {
@@ -75,7 +76,7 @@ class Dashboard extends React.Component {
 						{wantedQuestions.map((question) => (
 							<li
 								key={question.id}
-								onClick={() => this.openPollHandler(question)}
+								onClick={(e) => this.openPollHandler(e, question)}
 							>
 								<Poll
 									question={question}
@@ -84,16 +85,10 @@ class Dashboard extends React.Component {
 							</li>
 						))}
 					</ul>
-
-					{openPoll && (
-						<div className="poll-vote">
-							<RiCloseLine className={"icon"} onClick={this.onClosePoll} />
-							<PollVoting selectedQuestion={selectedQuestion} />
-						</div>
-					)}
 				</div>
 			</div>
 		);
 	}
 }
-export default Dashboard;
+const DBwithRoute = withRouter(Dashboard);
+export default DBwithRoute;

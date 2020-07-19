@@ -185,6 +185,7 @@ class PollVoting extends Component {
 }
 const mapStateToProps = (state) => {
 	const uid = state.firebase.auth.uid;
+
 	return {
 		authedUid: uid,
 		userAnswers: state.firestore.data.users[uid].answers,
@@ -196,7 +197,8 @@ const mapDispatchToProps = (dispatch) => {
 	};
 };
 
-export default compose(
+/* export default compose(
 	connect(mapStateToProps, mapDispatchToProps),
 	firestoreConnect([{ collection: "users" }])
 )(PollVoting);
+ */

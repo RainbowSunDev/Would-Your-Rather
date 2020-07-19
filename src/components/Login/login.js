@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import loginImg from "../../assets/login.svg";
 
 import { signIn } from "../../actions/authAction";
-import { Redirect, withRouter } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 
 class Login extends React.Component {
 	constructor(props) {
@@ -28,7 +28,7 @@ class Login extends React.Component {
 		}, 1000);
 	};
 	render() {
-		const { email, password, toHome } = this.state;
+		const { email, password } = this.state;
 
 		return (
 			<div className="base-container" ref={this.props.containerRef}>

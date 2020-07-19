@@ -11,6 +11,7 @@ import SignPage from "./SignPage";
 
 import Dashboard from "./Dashboard/Dashboard";
 import Leaderboard from "./Leaderboard";
+import Question from "./Question";
 
 class App extends Component {
 	render() {
@@ -37,6 +38,11 @@ class App extends Component {
 								path="/add"
 								exact
 								component={() => <NewQuestion uid={uid} />}
+							/>
+							<Route
+								path="/questions/:question_id"
+								exact
+								component={Question}
 							/>
 							{questions !== undefined &&
 								users !== undefined &&
