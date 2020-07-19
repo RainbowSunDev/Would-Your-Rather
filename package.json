@@ -19,7 +19,7 @@
 		"react-icons": "^3.10.0",
 		"react-modal-login": "^1.4.5",
 		"react-redux": "^5.1.2",
-		"react-redux-firebase": "^2.2.4",
+		"react-redux-firebase": "^2.5.0",
 		"react-redux-loading-bar": "^4.6.0",
 		"react-router-dom": "^5.2.0",
 		"react-scripts": "3.4.1",
