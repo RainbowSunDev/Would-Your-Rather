@@ -1,13 +1,12 @@
-import React from "react";
+import React, { Fragment } from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./components/App";
 import { createStore, applyMiddleware, compose } from "redux";
 import reducer from "./reducers";
 import { Provider } from "react-redux";
-/* import middleware from "./middleware";
 
- */ import thunk from "redux-thunk";
+import thunk from "redux-thunk";
 import { getFirebase, reactReduxFirebase } from "react-redux-firebase";
 import { getFirestore, reduxFirestore } from "redux-firestore";
 
@@ -28,9 +27,9 @@ const store = createStore(
 store.firebaseAuthIsReady.then(() => {
 	ReactDOM.render(
 		<Provider store={store}>
-			<React.Fragment>
+			<Fragment>
 				<App />,
-			</React.Fragment>
+			</Fragment>
 		</Provider>,
 
 		document.getElementById("root")

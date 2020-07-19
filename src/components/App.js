@@ -14,6 +14,7 @@ import Leaderboard from "./Leaderboard";
 import Question from "./Question";
 
 class App extends Component {
+	UNSAFE_componentWillMount() {}
 	render() {
 		const { authError, questions, users, uid } = this.props;
 		return (
