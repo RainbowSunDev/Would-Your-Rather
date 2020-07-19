@@ -29,14 +29,13 @@ class NewQuestion extends Component {
 			optionTwoText: optionTwo,
 			uid: uid,
 		});
-		setInterval(() => {
-			this.setState({ optionOne: "", optionTwo: "" });
+		this.setState({ optionOne: "", optionTwo: "" });
+		setTimeout(() => {
 			this.props.history.push("/");
 		}, 1000);
 	};
 	render() {
 		const { optionOne, optionTwo } = this.state;
-		console.log(this.state);
 		const { uid } = this.props;
 		if (uid === undefined) {
 			alert("You must login first to access this page");

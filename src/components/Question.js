@@ -10,7 +10,6 @@ class Question extends Component {
 		};
 	}
 	toggleOption1Checked = () => {
-		console.log("a7a");
 		this.setState((prevState) => {
 			return { optionOneChecked: !prevState.optionOneChecked };
 		});
@@ -167,7 +166,6 @@ class Question extends Component {
 		const { question, users } = this.props;
 
 		if (question && users) {
-			console.log("PROPS OF POLL", this.props);
 			const questionUID = question.uid;
 			const {
 				author,

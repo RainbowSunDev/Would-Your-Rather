@@ -1,7 +1,6 @@
 import React from "react";
 
 import { FaPoll } from "react-icons/fa";
-import { RiCloseLine } from "react-icons/ri";
 
 import Poll from "./Poll";
 
@@ -11,7 +10,6 @@ class Dashboard extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			openPoll: false,
 			selectedQuestion: {},
 			questions: Object.values(this.props.questions),
 			wantedQuestions: Object.values(this.props.questions),
@@ -21,13 +19,9 @@ class Dashboard extends React.Component {
 		this.handleWantedPolls("unanswered");
 	}
 	openPollHandler = (e, question) => {
-		console.log(question);
 		this.props.history.push(`/questions/${question.id}`);
-		this.setState({ openPoll: true, selectedQuestion: question });
 	};
-	onClosePoll = () => {
-		this.setState({ openPoll: false });
-	};
+
 	handleReceiveData = (questions) => {
 		this.setState({ questions: questions });
 	};
@@ -48,13 +42,12 @@ class Dashboard extends React.Component {
 				currentUserQuestions.includes(question.id)
 			);
 		}
-		this.setState({ openPoll: false, wantedQuestions: wantedQuestions });
+		this.setState({ wantedQuestions: wantedQuestions });
 	};
 
 	render() {
-		const { openPoll, selectedQuestion, wantedQuestions } = this.state;
+		const { wantedQuestions } = this.state;
 		const { users } = this.props;
-		console.log(this.state);
 		return (
 			<div className="dashboard">
 				<div className="dashboard-container">

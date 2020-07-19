@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+/* import React, { Component } from "react";
 import { vote } from "../../actions/questions";
 import { firestoreConnect } from "react-redux-firebase";
 import { Pie } from "react-chartjs-2";
@@ -196,7 +196,7 @@ const mapDispatchToProps = (dispatch) => {
 		vote: (qid, voting, authedUid) => dispatch(vote(qid, voting, authedUid)),
 	};
 };
-
+ */
 /* export default compose(
 	connect(mapStateToProps, mapDispatchToProps),
 	firestoreConnect([{ collection: "users" }])

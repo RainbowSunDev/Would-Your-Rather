@@ -36,7 +36,7 @@ class Leaderboard extends Component {
 			<div className="leaderboard">
 				<ul className="users-list">
 					{topUsers.map((user, index) => (
-						<div className="signle-user">
+						<div className="signle-user" key={user}>
 							<header>
 								<header className="index">#{index + 1}</header>
 								<img
