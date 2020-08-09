@@ -1,13 +1,3 @@
-<html>
-<body>
-<style>
-    div>img {
-    margin: 2%;
-    width: 45%;
-    border-radius: 5px;
-    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.4);
-}
-</style>
 <h1> WYR? 🤔</h1>
 
 [![Build Status](https://travis-ci.org/anfederico/Clairvoyant.svg?branch=master)](https://travis-ci.org/anfederico/Clairvoyant) ![Dependencies](https://img.shields.io/badge/dependencies-up%20to%20date-brightgreen.svg)![](https://github.com/anfederico/Clairvoyant/issues) [![JavaScript Style Guide: Good Parts](https://img.shields.io/badge/code%20style-goodparts-brightgreen.svg?style=flat)](https://github.com/dwyl/goodparts "JavaScript The Good Parts") ![Contributions welcome](https://img.shields.io/badge/contributions-welcome-orange.svg) [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT) [![NPM Version](https://img.shields.io/npm/v/npm.svg?style=flat)]() ![GitHub last commit](https://img.shields.io/github/last-commit/3ba2ii/Would-Your-Rather?color=blue)
@@ -63,11 +53,24 @@ $ yarn start
 ## Demo-Preview
 
 <div style = 'display:flex;   flex-wrap: wrap; justify-content:center;'>
-<img src='https://i.ibb.co/86V4TZD/Screen-Shot-2020-08-09-at-10-08-00-PM.png' width = 100%/>
+<img src='https://i.ibb.co/86V4TZD/Screen-Shot-2020-08-09-at-10-08-00-PM.png'  style= 'margin: 2%;
+    width: 45%;
+    border-radius: 5px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.4);'/>
 
-<img src='https://i.ibb.co/2NJQ4mB/Screen-Shot-2020-08-09-at-10-09-48-PM.png' />
-<img src='https://i.ibb.co/zrPP6B3/Screen-Shot-2020-08-09-at-10-16-19-PM.png'/>
-<img src='https://i.ibb.co/VJh8bRD/Screen-Shot-2020-08-09-at-10-17-23-PM.png'/>
+<img src='https://i.ibb.co/2NJQ4mB/Screen-Shot-2020-08-09-at-10-09-48-PM.png' style= 'margin: 2%;
+    width: 45%;
+    border-radius: 5px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.4);'/>
+<img src='https://i.ibb.co/zrPP6B3/Screen-Shot-2020-08-09-at-10-16-19-PM.png' style= 'margin: 2%;
+    width: 45%;
+    border-radius: 5px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.4);'/>
+<img src='https://i.ibb.co/VJh8bRD/Screen-Shot-2020-08-09-at-10-17-23-PM.png' style= 'margin: 2%;
+    width: 45%;
+    border-radius: 5px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.4);'/>
+
 </div>
 
 ## Authors
@@ -83,6 +86,3 @@ Contributions are what make the open source community such an amazing place to b
 3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
 4. Push to the Branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
-
-</body>
-</html>
