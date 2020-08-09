@@ -1,4 +1,13 @@
+<html>
 <body>
+<style>
+    div>img {
+    margin: 2%;
+    width: 45%;
+    border-radius: 5px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.4);
+}
+</style>
 <h1> WYR? 🤔</h1>
 
 [![Build Status](https://travis-ci.org/anfederico/Clairvoyant.svg?branch=master)](https://travis-ci.org/anfederico/Clairvoyant) ![Dependencies](https://img.shields.io/badge/dependencies-up%20to%20date-brightgreen.svg)![](https://github.com/anfederico/Clairvoyant/issues) [![JavaScript Style Guide: Good Parts](https://img.shields.io/badge/code%20style-goodparts-brightgreen.svg?style=flat)](https://github.com/dwyl/goodparts "JavaScript The Good Parts") ![Contributions welcome](https://img.shields.io/badge/contributions-welcome-orange.svg) [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT) [![NPM Version](https://img.shields.io/npm/v/npm.svg?style=flat)]() ![GitHub last commit](https://img.shields.io/github/last-commit/3ba2ii/Would-Your-Rather?color=blue)
@@ -6,7 +15,7 @@
 
 Would you rather is a website where you can play around with your friends, you can create your own account and post any question so that any user can vote for one of the options.
 
-![Home Page](https://2s9e3bif52.execute-api.eu-central-1.amazonaws.com/production/screenshot?url=https%3A%2F%2Ffrosty-clarke-ff74f9.netlify.app)
+![Home Page](https://2s9e3bif52.execute-api.eu-central-1.amazonaws.com/production/screenshot?url=https%3A%2F%2Ffrosty-clarke-ff74f9.netlify.app%2F)
 
 ## Table of Content
 
@@ -75,12 +84,5 @@ Contributions are what make the open source community such an amazing place to b
 4. Push to the Branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-<style>
-    div>img {
-    margin: 2%;
-    width: 45%;
-    border-radius: 5px;
-    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.4);
-}
-</style>
 </body>
+</html>
