@@ -1,70 +1,85 @@
-<h1 style='color:#241c69'>WYR?</h1>
-Would you rather is a website where you can play around with your friends,
-You can post your own polls and answer your friends' ones.
+<h1> WYR? 🤔</h1>
 
-## Available Scripts
+[![Build Status](https://travis-ci.org/anfederico/Clairvoyant.svg?branch=master)](https://travis-ci.org/anfederico/Clairvoyant) ![Dependencies](https://img.shields.io/badge/dependencies-up%20to%20date-brightgreen.svg)![](https://github.com/anfederico/Clairvoyant/issues) [![JavaScript Style Guide: Good Parts](https://img.shields.io/badge/code%20style-goodparts-brightgreen.svg?style=flat)](https://github.com/dwyl/goodparts "JavaScript The Good Parts") ![Contributions welcome](https://img.shields.io/badge/contributions-welcome-orange.svg) [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT) [![NPM Version](https://img.shields.io/npm/v/npm.svg?style=flat)]() ![GitHub last commit](https://img.shields.io/github/last-commit/3ba2ii/Would-Your-Rather?color=blue)
+<br/>
 
-In the project directory, you can run:
+Would you rather is a website where you can play around with your friends, you can create your own account and post any question so that any user can vote for one of the options.
 
-### `yarn start`
+![Home Page](https://2s9e3bif52.execute-api.eu-central-1.amazonaws.com/production/screenshot?url=https%3A%2F%2Ffrosty-clarke-ff74f9.netlify.app)
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Table of Content
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+- [Built With](#built-with)
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+- [Demo-Preview](#demo-preview)
+- [Authors](#authors)
+- [Contributing](#contributing)
 
-### `yarn test`
+## Built With
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+[![forthebadge](https://forthebadge.com/images/badges/made-with-javascript.svg)](https://forthebadge.com) [![ForTheBadge built-with-love](http://ForTheBadge.com/images/badges/built-with-love.svg)](https://GitHub.com/3ba2ii/)
 
-### `yarn build`
+- [HTML & CSS](https://www.w3schools.com/html/html_css.asp)
+- [SCSS](https://sass-lang.com/documentation/syntax)
+- [React](https://reactjs.org/docs/getting-started.html)
+- [Bootstrap](https://getbootstrap.com/)
+- [Firebase](https://firebase.google.com/)
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Getting Started
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+### Prerequisites
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+To use this repository, you need the following installed locally:
 
-### `yarn eject`
+- [Node.js](https://nodejs.org/en/)
+- [yarn](https://yarnpkg.com/)
+- [npm](https://www.npmjs.com/)
+- [React](https://www.npmjs.com/package/react)
+- [Redux](https://www.google.com/search?q=redux&oq=redux+&aqs=chrome..69i57j69i59l2j69i60l2j69i61j69i65l2.953j0j4&sourceid=chrome&ie=UTF-8)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Installation
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+After installing the dependencies, just clone the repository and navigate to the directory.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+```
+$ git clone https://github.com/3ba2ii/Would-Your-Rather
+$ cd Would-You-Rather
+$ yarn start
+```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Demo-Preview
 
-## Learn More
+<div style = 'display:flex;   flex-wrap: wrap; justify-content:center;'>
+<img src='https://i.ibb.co/86V4TZD/Screen-Shot-2020-08-09-at-10-08-00-PM.png' width = 100%/>
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+<img src='https://i.ibb.co/2NJQ4mB/Screen-Shot-2020-08-09-at-10-09-48-PM.png' />
+<img src='https://i.ibb.co/zrPP6B3/Screen-Shot-2020-08-09-at-10-16-19-PM.png'/>
+<img src='https://i.ibb.co/VJh8bRD/Screen-Shot-2020-08-09-at-10-17-23-PM.png'/>
+</div>
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Authors
 
-### Code Splitting
+- Ahmed Ghonem ![GitHub followers](https://img.shields.io/github/followers/3ba2ii?style=social) ![Twitter Follow](https://img.shields.io/twitter/follow/3ba2ii?style=social)
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+## Contributing
 
-### Analyzing the Bundle Size
+Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-### Making a Progressive Web App
+<style>
+    div > img{
+        margin:2%;
+        width:45%;
+        border-radius:5px;
+        box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.4);
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+    }
 
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+</style>
