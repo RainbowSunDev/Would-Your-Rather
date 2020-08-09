@@ -1,4 +1,6 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<h1 style='color:#241c69'>WYR?</h1>
+Would you rather is a website where you can play around with your friends,
+You can post your own polls and answer your friends' ones.
 
 ## Available Scripts
 

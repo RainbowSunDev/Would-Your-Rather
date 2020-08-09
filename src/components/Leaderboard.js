@@ -22,7 +22,7 @@ class Leaderboard extends Component {
 			return total_b - total_a;
 		});
 
-		this.setState({ topUsers: topUsers, loaded: true });
+		this.setState({ topUsers: topUsers.slice(0, 5), loaded: true });
 	}
 	render() {
 		const { topUsers, loaded } = this.state;
