@@ -52,18 +52,18 @@ $ yarn start
 
 ## Demo-Preview
 
-<div style = 'display:flex; flex-direction: row; flex-wrap: wrap; justify-content:center;'>
-<img src='https://i.ibb.co/86V4TZD/Screen-Shot-2020-08-09-at-10-08-00-PM.png' width=45% style='margin:1%; border-radius:5px; box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.24);
+
+<img src='https://i.ibb.co/86V4TZD/Screen-Shot-2020-08-09-at-10-08-00-PM.png' width=70% style='margin:1%; border-radius:5px; box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.24);
 '/>
 
-<img src='https://i.ibb.co/2NJQ4mB/Screen-Shot-2020-08-09-at-10-09-48-PM.png'  width=45% style='margin:1%; border-radius:5px;   box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.24);
+<img src='https://i.ibb.co/2NJQ4mB/Screen-Shot-2020-08-09-at-10-09-48-PM.png'  width=70% style='margin:1%; border-radius:5px;   box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.24);
 '/>
-<img src='https://i.ibb.co/zrPP6B3/Screen-Shot-2020-08-09-at-10-16-19-PM.png'   width=45% style='margin:1%; border-radius:5px;   box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.24);
+<img src='https://i.ibb.co/zrPP6B3/Screen-Shot-2020-08-09-at-10-16-19-PM.png'   width=70% style='margin:1%; border-radius:5px;   box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.24);
 '/>
-<img src='https://i.ibb.co/VJh8bRD/Screen-Shot-2020-08-09-at-10-17-23-PM.png'  width=45% style='margin:1%; border-radius:5px;   box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.24);
+<img src='https://i.ibb.co/VJh8bRD/Screen-Shot-2020-08-09-at-10-17-23-PM.png'  width=70% style='margin:1%; border-radius:5px;   box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.24);
 '/>
 
-</div>
+
 
 ## Authors
 
