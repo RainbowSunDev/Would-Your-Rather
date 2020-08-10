@@ -53,8 +53,9 @@ $ yarn start
 ## Demo-Preview
 
 <img src='https://i.ibb.co/h1N0WDF/PSD.png' />
-
-<img src='https://i.ibb.co/DtRPMpB/Leaderborads.png' style='text-align:center;'/>
+<p align="center">
+  <img width=60% src="https://i.ibb.co/DtRPMpB/Leaderborads.png">
+</p>
 
 ## Authors
 
