@@ -54,7 +54,7 @@ $ yarn start
 
 <img src='https://i.ibb.co/h1N0WDF/PSD.png' />
 <p align="center">
-  <img width=60% src="https://i.ibb.co/DtRPMpB/Leaderborads.png">
+  <img width=90% src="https://i.ibb.co/DtRPMpB/Leaderborads.png">
 </p>
 
 ## Authors
