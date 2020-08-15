@@ -59,9 +59,7 @@ $ yarn start
 
 ## Authors
 
-- **Ahmed Ghonem**
-
-[![GitHub followers](https://img.shields.io/github/followers/3ba2ii?style=social)](https://github.com/3ba2ii) [![Twitter Follow](https://img.shields.io/twitter/follow/3ba2ii?style=social)](https://twitter.com/3ba2ii)
+- **Ahmed Ghonem** - [**Github**](https://github.com/3ba2ii)
 
 ## Contributing
 
